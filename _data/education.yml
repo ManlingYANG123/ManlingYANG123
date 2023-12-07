@@ -1,0 +1,16 @@
+- School: Hong Kong University of Science and Technology (Guangzhou)
+  Program: MPhil in Computational Media and Arts Thrust, Information Hub
+  heading-id: head-princ1  # This can be any random string as long as each teaching set has a unique one. 
+  StartDate: 01/09/2023
+  EndDate: 30/06/2025
+  Department: bbbbbbb
+  first: false
+  Icon: /assets/img/icons/2x/princeton-crop.png      # Make this icon small, think 30px/30px
+
+- School: Chongqing University
+  Program: BEng in Electronic Information Engineering, School of Microelectronics and Communication Engineering
+  heading-id: head-harv1
+  StartDate: 01/09/2019
+  EndDate: 30/06/2023
+  Department: aaaaaaa
+  first: true   # one must be true to properly display

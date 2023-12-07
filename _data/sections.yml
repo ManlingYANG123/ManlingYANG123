@@ -1,0 +1,23 @@
+- name: Publications
+  id: publications
+  content:
+  url: publications.html
+  first: true
+
+- name: Projects
+  id: projects
+  content: 
+  url: projects.html
+  first: false
+
+- name: Education
+  id: education
+  content: 
+  url: education.html
+  first: false
+
+- name: Activities
+  id: activities
+  content: 
+  url: activities.html
+  first: false

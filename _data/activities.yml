@@ -1,4 +1,10 @@
 # 位于_data/activities.yaml或类似的数据文件中
+- Activity: CHI 2024 - ACM Conference on Human Factors in Computing Systems
+  Date: 22/09/2023 - 24/09/2023
+  Location: Honolulu, Hawaii, USA
+  Description: Attendee
+  MeetingLink: https://chi2024.acm.org/
+
 - Activity: VINCI 2023 - The 16th International Symposium on Visual Information Communication and Interaction
   Date: 22/09/2023 - 24/09/2023
   Location: Guangzhou, Guangdong, China

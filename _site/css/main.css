@@ -599,6 +599,15 @@ background-image: url(https://ionicframework.com/img/getting-started/ionic-nativ
   background-size: 80px;
 }
 
+.title {
+  width: 1000px;
+}
+
+.periodical {
+  display: inline-block;
+  width: 1000px;
+}
+
 @media(max-width: 990px){
 .blogcard{
   margin: 20px;

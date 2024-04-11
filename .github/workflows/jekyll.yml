@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    
+
 
 jobs:
   build:
@@ -14,6 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Install specific Bundler version
+      run: gem install bundler -v 2.5.7 
     
     - name: Setup Ruby
       uses: actions/setup-ruby@v1
@@ -24,6 +27,7 @@ jobs:
       run: |
         gem install bundler -v 2.4.19
         bundle install
+        bundle exec jekyll build
 
     - name: Build Jekyll site
       run: bundle exec jekyll build

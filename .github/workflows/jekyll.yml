@@ -14,14 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Ruby and Bundler
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'  # Choose the Ruby version that matches your local environment
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '2.7'
+
+      - name: Install dependencies
+        run: |
+          gem install bundler -v 2.5.7
+          bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build
 
       - name: Check out the resulting site
-        run: ls _site
+        run: |
+          ls _site

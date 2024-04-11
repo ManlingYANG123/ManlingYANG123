@@ -5,6 +5,7 @@ on:
     branches:
       - master
   pull_request:
+    
 
 jobs:
   build:
@@ -13,18 +14,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site
-      run: |
-        bundle install
-        bundle exec jekyll build
-    - name: Deploy the site
-      uses: peaceiris/actions-gh-pages@v3
+    
+    - name: Setup Ruby
+      uses: actions/setup-ruby@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site
-        publish_branch: gh-pages
-        cname: example.com
-        user_name: GitHub Actions
-        user_email:
+        ruby-version: '2.7'  # Choose the Ruby version that matches your local environment
 
-        
+    - name: Install dependencies
+      run: |
+        gem install bundler -v 2.4.19
+        bundle install
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+
+    - name: Check out the resulting site
+      run: ls _site

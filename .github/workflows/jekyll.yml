@@ -9,28 +9,26 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install specific Bundler version
-      run: gem install bundler -v 2.5.7 
-    
     - name: Setup Ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.7'  # Choose the Ruby version that matches your local environment
+        ruby-version: '2.7'
+
+    - name: Install specific Bundler version
+      run: gem install bundler -v 2.5.7 
 
     - name: Install dependencies
       run: |
-        gem install bundler -v 2.4.19
         bundle install
-        bundle exec jekyll build
 
     - name: Build Jekyll site
-      run: bundle exec jekyll build
+      run: |
+        bundle exec jekyll build
 
     - name: Check out the resulting site
       run: ls _site

@@ -12,23 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Setup Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.7'
+      - uses: actions/checkout@v2
 
-    - name: Install specific Bundler version
-      run: gem install bundler -v 2.5.7 
+      - name: Set up Ruby and Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'  # Choose the Ruby version that matches your local environment
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-    - name: Install dependencies
-      run: |
-        bundle install
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
 
-    - name: Build Jekyll site
-      run: |
-        bundle exec jekyll build
-
-    - name: Check out the resulting site
-      run: ls _site
+      - name: Check out the resulting site
+        run: ls _site

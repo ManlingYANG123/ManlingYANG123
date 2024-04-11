@@ -477,7 +477,7 @@ height: 175px;
 box-shadow: none; 
 border: 0px; 
 border-radius: 0px; 
-}
+}   
 
 .panel-profile-img 
 { 
@@ -599,13 +599,9 @@ background-image: url(https://ionicframework.com/img/getting-started/ionic-nativ
   background-size: 80px;
 }
 
-.title {
-  width: 1000px;
-}
-
-.periodical {
-  display: inline-block;
-  width: 1000px;
+.row {
+  width: 100%;
+  margin: 0 auto;  /* 居中对齐 */
 }
 
 @media(max-width: 990px){

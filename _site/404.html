@@ -61,9 +61,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
 
 <!--  GIT TALK CDN  for comment system -->
-<!--
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
 
 
 <!-- Provides information about an author or another person -->
@@ -82,33 +81,41 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
-<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#E3CFD1">
 
 <meta property="fb:app_id" content="">
-<meta property="og:url" content="/about.html">
+<meta property="og:url" content="http://localhost:4000">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Get to know what I'm up too">
-<meta property="og:image" content="">
-<meta property="og:image:alt" content="">
-<meta property="og:description" content="Get to know what I'm up too">
-<meta property="og:site_name" content="About Me">
+<meta property="og:title" content="Manling YANG, a minimalistic Jekyll theme for academics">
+<meta property="og:image" content="/assets/img/dumbarton.png">
+<meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
+<meta property="og:description" content="a minimalistic Jekyll theme for academics">
+<meta property="og:site_name" content="Manling YANG">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="">
+<meta property="article:author" content="John Doe">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@">
-<meta name="twitter:creator" content="@">
-<meta name="twitter:url" content="/about.html">
-<meta name="twitter:title" content="Get to know what I'm up too">
-<meta name="twitter:description" content="Get to know what I'm up too">
-<meta name="twitter:image" content="">
-<meta name="twitter:image:alt" content="">
+<meta name="twitter:site" content="@ManlingYang">
+<meta name="twitter:creator" content="@ManlingYang">
+<meta name="twitter:url" content="http://localhost:4000">
+<meta name="twitter:title" content="a minimalistic Jekyll theme for academics">
+<meta name="twitter:description" content="a minimalistic Jekyll theme for academics">
+<meta name="twitter:image" content="/assets/img/dumbarton.png">
+<meta name="twitter:image:alt" content="A minimalistic jekyll theme for academic">
 
 <!-- Used for adding in-document CSS -->
 
 
 
 <!-- JavaScript & No-JavaScript tags -->
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -120,12 +127,20 @@
     });
 </script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', ');
+</script>
 
 <noscript>
   <!-- No JS alternative -->
 </noscript>
-  <body>
+  <body style="background-color:;">
     
 <nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:;background-color:#E4D3DB;">
   <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#7F3B83;">Manling YANG</h4></a>
@@ -144,7 +159,7 @@
       <li class="nav-item">
         
 <!-- Displays Social Media Icons based on _config.yml settings -->
-<span style="color: Black;">
+<span style="color:#7F3B83;">
     <i> &nbsp;&nbsp; </i>
     
         <a class="social-link" href="https://twitter.com/ManlingYang">
@@ -167,28 +182,31 @@
   </div>
 </nav>
 
+    <div class="dumbarton-spacer-sm"></div>
     <div class="container">
-      
-      <div class="card border-0">
-          <div class="card-body">
-            <p class="card-text">
-                <h1 class="mx-auto" style="font-family:Courgette;">About Me</h1>
+      <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero id faucibus nisl tincidunt eget. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Duis convallis convallis tellus id interdum velit. Ultricies mi eget mauris pharetra et. Odio pellentesque diam volutpat commodo sed egestas. Eu mi bibendum neque egestas congue quisque. Augue lacus viverra vitae congue eu consequat ac felis donec. Ultrices vitae auctor eu augue ut lectus arcu. Eu consequat ac felis donec et. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget.</p>
+<div class="container">
+  <h1>404</h1>
 
-<p>Semper eget duis at tellus at urna condimentum. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Suspendisse faucibus interdum posuere lorem ipsum dolor. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas dui. Massa placerat duis ultricies lacus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Placerat orci nulla pellentesque dignissim enim sit amet. Tellus mauris a diam maecenas sed enim. Tortor vitae purus faucibus ornare. Lectus quam id leo in vitae turpis massa. Porttitor eget dolor morbi non arcu risus quis varius. Felis eget nunc lobortis mattis aliquam. Integer vitae justo eget magna fermentum.</p>
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
 
-<p>Egestas congue quisque egestas diam in arcu cursus euismod quis. Ullamcorper eget nulla facilisi etiam dignissim diam. Nunc pulvinar sapien et ligula ullamcorper. Turpis in eu mi bibendum. Faucibus scelerisque eleifend donec pretium vulputate. Euismod lacinia at quis risus sed vulputate odio ut enim. Phasellus faucibus scelerisque eleifend donec pretium. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper. Quis auctor elit sed vulputate. Eu mi bibendum neque egestas. Eu turpis egestas pretium aenean pharetra magna ac. Augue ut lectus arcu bibendum at. Urna condimentum mattis pellentesque id nibh tortor id aliquet lectus. Fermentum leo vel orci porta non pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Amet commodo nulla facilisi nullam vehicula ipsum a arcu.</p>
-
-
-            </p>
-            
-              <p class="card-text"><small class="text-muted">This page was last updated at 2024-04-11 14:27.</small></p>
-            
-          </div>
-      </div>
-      
     </div>
+    <div class="dumbarton-spacer"></div>
     <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <p class="navbar-text pull-left">© 2024 - In Guangzhou, China</p>

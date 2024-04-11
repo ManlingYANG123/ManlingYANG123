@@ -1,5 +1,5 @@
 <!-- Displays Social Media Icons based on _config.yml settings -->
-{% assign theme = site.data.themes[site.ui_theme] %}
+{{ if site.twitter }}
 <span style="color: Black;">
      {% if site.twitter %}
         <a class="social-link" href="https://twitter.com/{{ site.twitter }}">

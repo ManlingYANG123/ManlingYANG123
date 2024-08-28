@@ -1,0 +1,24 @@
+# 位于_data/activities.yaml或类似的数据文件中
+- Activity: CHI 2024 - ACM Conference on Human Factors in Computing Systems
+  Date: 11/05/2024 - 16/05/2024
+  Location: Honolulu, Hawaii, USA
+  Description: Attendee
+  MeetingLink: https://chi2024.acm.org/
+
+- Activity: VINCI 2023 - The 16th International Symposium on Visual Information Communication and Interaction
+  Date: 22/09/2023 - 24/09/2023
+  Location: Guangzhou, Guangdong, China
+  Description: Volunteer
+  MeetingLink: https://vinci-symp.org/
+
+- Activity: ChinaVis 2023 - The 10th China Visualization and Visual Analytics Conference
+  Date: 21/07/2023 - 24/07/2023
+  Location: Chongqing, China
+  Description: Attendee
+  MeetingLink: https://chinavis.org/2023/
+
+- Activity: ChineseCSCW 2022 - Chinese Conference on Computer Supported Cooperative Work and Social Computing
+  Date: 25/11/2022 - 27/11/2022
+  Location: Taiyuan, Shanxi, China
+  Description: Attendee
+  MeetingLink: https://conf.scholat.com/ccscw/2022

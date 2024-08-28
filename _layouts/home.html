@@ -1,0 +1,192 @@
+---
+layout: default
+---
+
+{% assign theme = site.data.themes[site.ui_theme] %}
+
+<!-- HELP TIPS SECTION -->
+<!-- This section is used only for development mode. Disable it in _config.yml with `help_tips: false`. -->
+{% if site.help_tips %}
+<div class="toast animate__animated animate__pulse animate__infinite"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+     data-autohide="false"
+     data-delay="10000"
+     style="position: absolute; top: 10px; right: 10px; z-index: 10000;">
+  <div class="toast-header">
+    <img src="/assets/img/icons/山茶花.ico" class="rounded mr-2" alt="...">
+    <strong class="mr-auto">Tyler Butler</strong>
+    <small class="text-muted">11 mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Thanks for checking out Jekyll-Theme-Dumbarton! This theme was developed by <a href="https://twitter.com/ManlingYang">Tyler Butler</a>. If you're interested in using this in your own website, check out the project on <a href="https://github.com/ManlingYANG123">Github</a>.
+  </div>
+</div>
+{% endif %}
+
+<!-- ABOUT ME SECTION -->
+<div class="card mx-auto border-0"
+     style="position:relative; background-color:{{theme.home-background-color}};">
+  <div class="row">
+    <div class="col-md-4">
+      {% if site.animate %}
+      <img src="{{ site.profile_image }}"
+           class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded"
+           alt="...">
+      {% else %}
+      <img src="{{ site.profile_image }}" class="img-thumbnail float-left" alt="...">
+      {% endif %}
+    </div>
+    <!-- EDUCATION SECTION -->
+    <div class="col-md-8">
+      {% capture educationStyle %}
+      style="color:{{theme.education-font-color}};"
+      {% endcapture %}
+      <div class="card-body{% if site.animate %} animate__animated animate__fadeInRight{% endif %}{{ educationStyle }}">
+        <p{{ educationStyle }}>{{ content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOME HIGHLIGHTS SECTION -->
+{% capture cardClass %}
+card mx-auto{% if site.animate %} animate__animated animate__slideInUp animate__delay-1s{% endif %}
+{% endcapture %}
+<div class="{{ cardClass }}" style="max-width: 100%;">
+  <div class="card-header" style="background-color:{{ theme.home-highlight-background }};">
+    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
+      {% for section in site.data.sections %}
+        {% capture isActiveTab %}{% if section.first %}active{% endif %}{% endcapture %}
+        <li class="nav-item">
+          <a class="nav-link{% unless section.first %}{% endunless %}"
+             id="{{ section.jsid }}"
+             href="#{{ section.id }}"
+             role="tab"
+             aria-controls="{{ section.id }}"
+             aria-selected="{{ isActiveTab }}"
+             style="font-family:{{ theme.font}}; color:{{ theme.home-highlight-header-text }};">
+            {{ section.emoji }} {{ section.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="tab-content mt-3">
+      {% for section in site.data.sections %}
+        {% if section.name == "Publications" %}
+        <div class="tab-pane {% if section.first %}active{% endif %} overflow-auto"
+             id="{{ section.id }}"
+             role="tabpanel">
+          <p><i>{{ section.description }}</i></p>
+          <p class="card-text">{% bibliography -f papers %}</p>
+        </div>
+        {% elsif section.name == "Projects" %}
+        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
+          <p><i>{{ section.description }}</i></p>
+          {% for project in site.data.projects %}
+          <div class="media mt-2">
+            <a href="{{ project.link }}"><img src="{{ project.image }}" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
+            <div class="media-body">
+              <h6 class="mt-0"><a href="{{ project.link }}" class="highlighted"><strong>{{ project.name }}</strong></a></h6>
+              {{ project.description }}
+              {% if project.tech %}
+              <h6>Technologies</h6>
+              {% for tech in project.tech %}
+              <span class="badge badge-secondary mr-1" style="background-color:{{ theme.projects-color }};">{{ tech }}</span>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% elsif section.name == "Education" %}
+        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
+          <p><i>{{ section.description }}</i></p>
+          <div class="list-group">
+            {% for education in site.data.education %}
+            <div class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1"><strong>{{ education.School }}</strong></h6>
+                <h6 class="mb-1"><strong>{{ education.StartDate }} - {{ education.EndDate }}</strong></h6>
+              </div>
+              <h6>{{ education.Program }}</h6>
+              <h6>{{ education.Department }}</h6>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% elsif section.name == "Activities" %}
+        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
+          <p><i>{{ section.description }}</i></p>
+          <div class="list-group">
+            {% for activity in site.data.activities %}
+              <div class="list-group-item list-group-item-action">
+                <h6 class="mt-0">
+                  <strong>
+                    <a href="{{ activity.MeetingLink }}" target="_blank">{{ activity.Activity }}</a>
+                  </strong>
+                </h6>                
+                <p class="mb-1"><strong>Date:</strong> {{ activity.Date }}</p>
+                <p class="mb-1"><strong>Location:</strong> {{ activity.Location }}</p>
+                <p class="mb-1"><strong>Description:</strong> {{ activity.Description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>        
+        {% else %}
+        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
+          <h5 class="card-title text-center"><a href="/{{ section.url }}" class="highlighted">{{ section.description }}</a></h5>
+          <p class="card-text">{{ section.content }}</p>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER SECTION -->
+<div class="card mx-auto border-0" style="position:relative;background-color:{{theme.home-background-color}};">
+  <div class="card-body">
+    <p class="card-text text-center" style="color:{{theme.footer-font-color}};">{{ site.footer-links | markdownify }}</p>
+  </div>
+</div>
+
+<!-- ANIMATE.JS ANIMATE LIBRARY
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+-->
+
+<!-- JS FUNCTION FOR TAB ACTIVATION -->
+<!--JS FUNCTION FOR RECENT WORK SECTION -->
+<script>
+  $('#test-list a').on('click', function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+  });
+</script> 
+
+<!-- OPTIONAL TOAST JS FUNCTION-->
+<script>
+  $(document).ready(function() {
+      $(".toast").toast("show");
+  });
+</script>
+
+
+<script>
+$('body').scrollspy({ target: '#list-example' })
+</script>
+
+<script>
+$('.collapse').collapse()
+</script>
+
+<script>
+$('.show').show()
+</script>

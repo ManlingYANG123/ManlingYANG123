@@ -8,5 +8,5 @@ Welcome to my homepage! I am an MPhil at [the Hong Kong University of Science an
 
 *Email*: myang838@connect.hkust-gz.edu.cn
 
-*WeChat*: Man_ling_yml
+<!-- *WeChat*: Man_ling_yml -->
 <!-- <a href="/contact.html" class="highlighted">Contact Me</a> -->

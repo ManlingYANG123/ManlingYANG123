@@ -21,6 +21,7 @@ image_alt: A minimalistic jekyll theme for academic    # image description
 #========================================#: 
 author: John Doe 
 profile_image: /assets/img/avatar/cropped.png #/assets/img/avatar/avatar.jpeg 
+profile_image_hover: /assets/img/avatar/hover.png
 occupation: 
 snippet:
 twitter: ManlingYang
@@ -122,12 +123,6 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
-  replace_strings: true
-  join_strings: true
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: 
-  query: "@*"
 
 # =======================================#
 # ------------CDN SETTINGS---------------#

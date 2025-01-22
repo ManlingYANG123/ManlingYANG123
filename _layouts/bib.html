@@ -61,14 +61,20 @@
       <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
     {% endif %}
     {% if entry.html %}
-      <a href="{{ entry.html }}" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+      <a href="{{ entry.html }}" 
+         class="btn btn-sm z-depth-0" 
+         role="button" 
+         target="_blank">
+          <i class="fas fa-external-link-alt"></i> Link
+      </a>
     {% endif %}
     {% if entry.pdf %}
-      {% if entry.pdf contains '://' %}
-      <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      {% else %}
-      <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      {% endif %}
+      <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" 
+         class="btn btn-sm z-depth-0" 
+         role="button" 
+         target="_blank">
+          <i class="fas fa-file-pdf"></i> PDF
+      </a>
     {% endif %}
     {% if entry.supp %}
       {% if entry.supp contains '://' %}
@@ -81,7 +87,12 @@
       <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-blog"></i></a>
     {% endif %}
     {% if entry.code %}
-      <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-code"></i></a>
+      <a href="{{ entry.code }}" 
+         class="btn btn-sm z-depth-0" 
+         role="button" 
+         target="_blank">
+        <i class="fas fa-code"></i> Code
+      </a>
     {% endif %}
     {% if entry.poster %}
       {% if entry.poster contains '://' %}
@@ -99,6 +110,14 @@
     {% endif %}
     {% if entry.website %}
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-external-link-alt"></a>
+    {% endif %}
+    {% if entry.dataset %}
+      <a href="{{ entry.dataset }}" 
+         class="btn btn-sm z-depth-0" 
+         role="button" 
+         target="_blank">
+        <i class="fas fa-database"></i> Dataset
+      </a>
     {% endif %}
     </div>
 

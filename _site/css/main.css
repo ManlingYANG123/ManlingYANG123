@@ -692,3 +692,25 @@ $font-family: Proxima, Helvetica, Arial, sans-serif;
   font-family: Proxima;
   margin: 5% 0 0 15%;
 }
+
+/* Image Hover Effect Styles */
+.image-hover-container {
+    position: relative;
+    display: inline-block; /* Or display: block; depending on your layout */
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Adjust transition duration as needed */
+}
+
+.image-hover-container:hover .hover-image {
+    opacity: 1;
+}
+
+.main-image {
+    display: block; /* To remove extra space below image in some cases */
+}

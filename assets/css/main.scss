@@ -26,3 +26,26 @@
     vertical-align: middle;
     cursor: pointer;
 } 
+
+/* timeline.css */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-date {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .timeline-content {
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }

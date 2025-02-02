@@ -195,10 +195,12 @@
      style="position:relative; background-color:;">
   <div class="row">
     <div class="col-md-4">
-      <div class="image-hover-container">
-        <img src="/assets/img/avatar/cropped.png" class="img-thumbnail main-image shadow bg-white rounded" alt="Main Image">
-        <img src="/assets/img/avatar/hover.png" class="img-thumbnail hover-image shadow bg-white rounded" alt="Hover Image">
-      </div>
+      <div class="col-md-4">
+        <div class="image-container">
+            <img src="/assets/img/avatar/cropped.png" class="img-thumbnail main-image shadow bg-white rounded" alt="Main Image" 
+                 onmouseover="this.src='/assets/img/avatar/hover.png'" 
+                 onmouseout="this.src='/assets/img/avatar/cropped.png'">
+        </div>
     </div>
     <!-- EDUCATION SECTION -->
     <div class="col-md-8">
@@ -265,6 +267,18 @@ card mx-auto animate__animated animate__slideInUp animate__delay-1s
              aria-selected=""
              style="font-family:Poppins; color:#7F3B83;">
              Activities
+          </a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link"
+             id=""
+             href="#news"
+             role="tab"
+             aria-controls="news"
+             aria-selected=""
+             style="font-family:Poppins; color:#7F3B83;">
+             Timeline
           </a>
         </li>
       
@@ -448,6 +462,7 @@ card mx-auto animate__animated animate__slideInUp animate__delay-1s
     
 
     <div class="links">
+    
     
     
     

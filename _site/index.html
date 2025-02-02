@@ -183,11 +183,10 @@
      style="position:relative; background-color:;">
   <div class="row">
     <div class="col-md-4">
-      
-      <img src="/assets/img/avatar/cropped.png"
-           class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded"
-           alt="...">
-      
+      <div class="image-hover-container">
+        <img src="/assets/img/avatar/cropped.png" class="img-thumbnail main-image shadow bg-white rounded" alt="Main Image">
+        <img src="/assets/img/avatar/hover.png" class="img-thumbnail hover-image shadow bg-white rounded" alt="Hover Image">
+      </div>
     </div>
     <!-- EDUCATION SECTION -->
     <div class="col-md-8">
@@ -258,12 +257,12 @@ card mx-auto animate__animated animate__slideInUp animate__delay-1s
         <li class="nav-item">
           <a class="nav-link"
              id=""
-             href="#activities"
+             href="#news"
              role="tab"
-             aria-controls="activities"
+             aria-controls="news"
              aria-selected=""
              style="font-family:Poppins; color:#7F3B83;">
-             Activities
+             News & Activities
           </a>
         </li>
       
@@ -356,6 +355,13 @@ card mx-auto animate__animated animate__slideInUp animate__delay-1s
           <i class="fas fa-external-link-alt"></i> Link
       </a>
     
+    
+      <a href="/assets/pdf/manlingtvcg2025.pdf" 
+         class="btn btn-sm z-depth-0" 
+         role="button" 
+         target="_blank">
+          <i class="fas fa-file-pdf"></i> PDF
+      </a>
     
     
     
@@ -749,56 +755,74 @@ card mx-auto animate__animated animate__slideInUp animate__delay-1s
         
       
         
-        <div class="tab-pane overflow-auto" id="activities" role="tabpanel" aria-labelledby="activities-tab">
-          <p><i></i></p>
-          <div class="list-group">
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://chi2024.acm.org/" target="_blank">CHI 2024 - ACM Conference on Human Factors in Computing Systems</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 11/05/2024 - 16/05/2024</p>
-                <p class="mb-1"><strong>Location:</strong> Honolulu, Hawaii, USA</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://vinci-symp.org/" target="_blank">VINCI 2023 - The 16th International Symposium on Visual Information Communication and Interaction</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 22/09/2023 - 24/09/2023</p>
-                <p class="mb-1"><strong>Location:</strong> Guangzhou, Guangdong, China</p>
-                <p class="mb-1"><strong>Description:</strong> Volunteer</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://chinavis.org/2023/" target="_blank">ChinaVis 2023 - The 10th China Visualization and Visual Analytics Conference</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 21/07/2023 - 24/07/2023</p>
-                <p class="mb-1"><strong>Location:</strong> Chongqing, China</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://conf.scholat.com/ccscw/2022" target="_blank">ChineseCSCW 2022 - Chinese Conference on Computer Supported Cooperative Work and Social Computing</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 25/11/2022 - 27/11/2022</p>
-                <p class="mb-1"><strong>Location:</strong> Taiyuan, Shanxi, China</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
+        <div class="tab-pane overflow-auto" id="news" role="tabpanel" aria-labelledby="news-tab">
+          <p class="section-description"><i></i></p>
+          <div class="timeline-container">
+            <div class="timeline">
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2025/01 🎊</strong>: Our paper Dashboard Vision has been accepted by IEEE TVCG.</p>             -->
+                  <p class="timeline-text">2025/01 🎊: Our paper Dashboard Vision has been accepted by IEEE TVCG.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2025/01 🎊</strong>: Our paper GenColor has been accepted by CHI'25.</p>             -->
+                  <p class="timeline-text">2025/01 🎊: Our paper GenColor has been accepted by CHI'25.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2024/12 🎊</strong>: Our paper FInFlier has been accepted by IEEE TVCG.</p>             -->
+                  <p class="timeline-text">2024/12 🎊: Our paper FInFlier has been accepted by IEEE TVCG.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2024/05 👀</strong>: Attending CHI'24 as an attendee in Honolulu, Hawaii, USA.</p>             -->
+                  <p class="timeline-text">2024/05 👀: Attending CHI'24 as an attendee in Honolulu, Hawaii, USA.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2024/01 🎊</strong>: Our paper C2Ideas has been accepted by CHI'24.</p>             -->
+                  <p class="timeline-text">2024/01 🎊: Our paper C2Ideas has been accepted by CHI'24.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2023/09 🙋🏻‍♀️</strong>: Attending VINCI'23 as a student volunteer in Guangzhou, Guangdong, China.</p>             -->
+                  <p class="timeline-text">2023/09 🙋🏻‍♀️: Attending VINCI'23 as a student volunteer in Guangzhou, Guangdong, China.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2023/09 📍</strong>: I joined CIVAL Lab as an MPhil.</p>             -->
+                  <p class="timeline-text">2023/09 📍: I joined CIVAL Lab as an MPhil.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2023/07 👀</strong>: Attending ChinaVis'23 in Chongqing, China.</p>             -->
+                  <p class="timeline-text">2023/07 👀: Attending ChinaVis'23 in Chongqing, China.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2023/06 📍</strong>: My journey in visualization started, as a Research Assistant in CIVAL Lab.</p>             -->
+                  <p class="timeline-text">2023/06 📍: My journey in visualization started, as a Research Assistant in CIVAL Lab.</p>
+
+                </div>
+              
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>2022/01 👀</strong>: Attending ChineseCSCW'22 to present our paper in Taiyuan, Shanxi, China.</p>             -->
+                  <p class="timeline-text">2022/01 👀: Attending ChineseCSCW'22 to present our paper in Taiyuan, Shanxi, China.</p>
+
+                </div>
+              
+            </div>
           </div>
-        </div>        
+        </div>
         
       
     </div>
@@ -850,7 +874,7 @@ $('.show').show()
     <div class="dumbarton-spacer"></div>
     <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-    <p class="navbar-text pull-left">© 2024 - In Guangzhou, China</p>
+    <p class="navbar-text pull-left">© 2025 - In Guangzhou, China</p>
     </p>
     <p class="navbar-text pull-right">
             <!-- Displays Social Media Icons based on _config.yml settings

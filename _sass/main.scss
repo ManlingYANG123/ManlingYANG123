@@ -15,3 +15,76 @@
 .dropdown-toggle::after {
   display: none;
 }
+
+/* 整个时间轴容器 */
+.timeline-container {
+  display: flex;
+  width: 100%;
+}
+
+/* 时间轴区域 */
+.timeline {
+  position: relative;
+  width: 100%;
+  padding: 0;            /* 减少或去除默认内边距 */
+  margin-left: 20px;
+  margin-top: 0;
+}å
+
+/* 内容区 */
+.timeline-content {
+  margin: 0;
+  margin-left: 5px; 
+  line-height: 1.1;
+  padding: 0; /* 去掉内边距 */
+}
+
+.timeline-content p {
+  margin: 0; /* 消除多余空白行 */
+  padding: 0;
+}
+.timeline {
+  margin-top: -15px; /* 向上移动时间轴内容 */
+  margin-left: 20px; /* 向右移动时间轴内容 */
+}
+
+.timeline-item {
+  margin-bottom: 4px; /* 保持下边距 */
+}
+
+.timeline p {
+  margin: 0; /* 消除多余空白行 */
+  padding: 0;
+}
+
+.timeline-text {
+  line-height: 1; /* 设置行距为 1，缩短行距 */
+  margin: 0; /* 确保没有外边距 */
+  padding: 0; /* 确保没有内边距 */
+}
+
+.image-container {
+  position: relative; /* 使子元素相对定位 */
+  display: inline-block; /* 使容器适应内容 */
+}
+
+.main-image, .hover-image {
+  width: 100%; /* 确保图片宽度适应容器 */
+  height: auto; /* 保持图片比例 */
+}
+
+.hover-image {
+  position: absolute; /* 绝对定位 */
+  top: 0;
+  left: 0;
+  opacity: 0; /* 初始隐藏 */
+  transition: opacity 0.3s ease; /* 添加过渡效果 */
+}
+
+.image-container:hover .hover-image {
+  opacity: 1; /* 鼠标悬停时显示 */
+}
+
+.image-container:hover .main-image {
+  opacity: 0; /* 鼠标悬停时隐藏 */
+}

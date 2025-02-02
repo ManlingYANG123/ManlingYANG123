@@ -140,6 +140,21 @@ card mx-auto{% if site.animate %} animate__animated animate__slideInUp animate__
             {% endfor %}
           </div>
         </div>        
+        {% elsif section.name == "News & Activities" %}
+        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
+          <p class="section-description"><i>{{ section.description }}</i></p>
+          <div class="timeline-container">
+            <div class="timeline">
+              {% for event in site.data.news %}
+                <div class="timeline-item">
+                  <!-- <p class="timeline-text"><strong>{{ event.Date }}</strong>: {{ event.content }}</p>             -->
+                  <p class="timeline-text">{{ event.Date }}: {{ event.content }}</p>
+
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
         {% else %}
         <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
           <h5 class="card-title text-center"><a href="/{{ section.url }}" class="highlighted">{{ section.description }}</a></h5>

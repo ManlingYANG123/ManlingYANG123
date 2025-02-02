@@ -10,8 +10,14 @@
   url: education.html
   first: false
 
-- name: Activities
-  id: activities
+# - name: Activities
+#   id: activities
+#   content: 
+#   url: activities.html
+#   first: false
+
+- name: News & Activities
+  id: news
   content: 
-  url: activities.html
+  url: news.html
   first: false

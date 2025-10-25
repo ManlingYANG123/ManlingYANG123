@@ -10,7 +10,7 @@
  -->
 <title>Home</title>
 <!-- Set the base URL for all relative URLs within the document -->
-<base href="https://manlingyang.org">
+<base href="http://localhost:4000">
 
 <!--
   Allows control over where resources are loaded from.
@@ -84,7 +84,7 @@
 <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#E3CFD1">
 
 <meta property="fb:app_id" content="">
-<meta property="og:url" content="https://manlingyang.org">
+<meta property="og:url" content="http://localhost:4000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Home, a minimalistic Jekyll theme for academics">
 <meta property="og:image" content="/assets/img/dumbarton.png">
@@ -97,7 +97,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ManlingYang">
 <meta name="twitter:creator" content="@ManlingYang">
-<meta name="twitter:url" content="https://manlingyang.org">
+<meta name="twitter:url" content="http://localhost:4000">
 <meta name="twitter:title" content="a minimalistic Jekyll theme for academics">
 <meta name="twitter:description" content="a minimalistic Jekyll theme for academics">
 <meta name="twitter:image" content="/assets/img/dumbarton.png">
@@ -376,7 +376,7 @@
     
     <div class="scattered-photo-item" data-index="21">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF6794.JPG" 
+        <img src="/assets/img/photo/digital/DSCF6797.jpg" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -385,7 +385,7 @@
     
     <div class="scattered-photo-item" data-index="22">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF6797.jpg" 
+        <img src="/assets/img/photo/digital/DSCF6862.jpg" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -394,7 +394,7 @@
     
     <div class="scattered-photo-item" data-index="23">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF6862.jpg" 
+        <img src="/assets/img/photo/digital/DSCF6950.JPG" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -403,7 +403,7 @@
     
     <div class="scattered-photo-item" data-index="24">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF6950.JPG" 
+        <img src="/assets/img/photo/digital/DSCF7084.JPG" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -412,7 +412,7 @@
     
     <div class="scattered-photo-item" data-index="25">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF7084.JPG" 
+        <img src="/assets/img/photo/digital/DSCF7099.jpg" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -421,7 +421,7 @@
     
     <div class="scattered-photo-item" data-index="26">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF7099.jpg" 
+        <img src="/assets/img/photo/digital/DSCF7198.JPG" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -430,7 +430,7 @@
     
     <div class="scattered-photo-item" data-index="27">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF7198.JPG" 
+        <img src="/assets/img/photo/digital/DSCF7243.JPG" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -439,7 +439,7 @@
     
     <div class="scattered-photo-item" data-index="28">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF7243.JPG" 
+        <img src="/assets/img/photo/digital/DSCF7262.JPG" 
              class="scattered-photo" 
              loading="lazy"
              style="background: none !important; background-color: transparent !important;">
@@ -448,15 +448,6 @@
     
     <div class="scattered-photo-item" data-index="29">
       <div class="photo-wrapper">
-        <img src="/assets/img/photo/digital/DSCF7262.JPG" 
-             class="scattered-photo" 
-             loading="lazy"
-             style="background: none !important; background-color: transparent !important;">
-      </div>
-    </div>
-    
-    <div class="scattered-photo-item" data-index="30">
-      <div class="photo-wrapper">
         <img src="/assets/img/photo/digital/DSCF7409.JPG" 
              class="scattered-photo" 
              loading="lazy"
@@ -464,7 +455,7 @@
       </div>
     </div>
     
-    <div class="scattered-photo-item" data-index="31">
+    <div class="scattered-photo-item" data-index="30">
       <div class="photo-wrapper">
         <img src="/assets/img/photo/digital/DSCF7421.JPG" 
              class="scattered-photo" 
@@ -797,10 +788,20 @@
 
 
 <style>
+/* 确保页面没有水平滚动条 */
+body, html {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
 .photo-gallery {
   min-height: 100vh;
   position: relative;
   padding: 20px;
+  overflow-x: hidden; /* 移除水平滚动条 */
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100vw; /* 确保不超出视口宽度 */
 }
 
 .photo-tabs {
@@ -847,17 +848,21 @@
 }
 
 .scattered-photo-item {
-  position: absolute;
+  position: absolute !important;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1;
   background: transparent !important; /* 强制确保没有背景色 */
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0; /* 初始隐藏，等待JavaScript显示 */
+  visibility: hidden; /* 初始隐藏，等待JavaScript显示 */
   /* 初始位置：根据配置设置 */
-  left: 42.2125%; /* 再向左移动0.0375% */
   
-  top: 70px; /* tab-buttons容器下方居中位置，考虑按钮高度和间距 */
-  
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
+  
 }
 
 .scattered-photo-item:hover {
@@ -1007,7 +1012,7 @@ img[class*="scattered-photo"],
 }
 
 .scattered-photo-item {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.3s ease forwards;
 }
 
 /* 动态生成动画延迟 - 通过JavaScript设置 */
@@ -1021,6 +1026,7 @@ img[class*="scattered-photo"] {
   background-color: transparent !important;
   background-image: none !important;
 }
+
 </style>
 
 <script>
@@ -1028,10 +1034,13 @@ $(document).ready(function() {
   // 获取配置
   const config = {
     animation: {
-      baseDelay: 0.1,
-      delayIncrement: 0.1,
-      maxDelay: 1.6,
-      fadeDuration: 0.6
+      baseDelay: 0.05,
+      delayIncrement: 0.05,
+      maxDelay: 0.5,
+      fadeDuration: 0.3,
+      fastMode: false,
+      centerDuration: 0.5,
+      scatterDelay: 0.5
     },
     sizing: {
       baseSizeMin: 200,
@@ -1041,7 +1050,10 @@ $(document).ready(function() {
     layout: {
       margin: 50,
       padding: 30,
-      rotationRange: 10
+      rotationRange: 10,
+      initialPosition: "center",
+      centerOffsetX: -70,
+      centerOffsetY: -100
     },
     modal: {
       backgroundOpacity: 0.9,
@@ -1061,14 +1073,23 @@ $(document).ready(function() {
     
     console.log('开始排列照片，总数:', items.length);
     
-    // 设置动态动画延迟
-    items.each(function(index) {
-      const delay = Math.min(
-        config.animation.baseDelay + (index * config.animation.delayIncrement),
-        config.animation.maxDelay
-      );
-      $(this).css('animation-delay', delay + 's');
-    });
+    // 设置动态动画延迟 - 中心聚合模式
+    if (config.animation.fastMode) {
+      // 快速模式：所有照片几乎同时出现
+      items.each(function(index) {
+        const delay = Math.min(index * 0.01, 0.1); // 最多0.1秒延迟
+        $(this).css('animation-delay', delay + 's');
+      });
+    } else {
+      // 中心聚合模式：照片快速聚合到中心
+      items.each(function(index) {
+        const delay = Math.min(
+          config.animation.baseDelay + (index * config.animation.delayIncrement),
+          config.animation.maxDelay
+        );
+        $(this).css('animation-delay', delay + 's');
+      });
+    }
     
       // 分类照片：横屏和竖屏
       const landscapePhotos = [];
@@ -1147,28 +1168,39 @@ $(document).ready(function() {
       
       console.log(`横屏照片: ${landscapePhotos.length}张`);
       console.log(`竖屏照片: ${portraitPhotos.length}张`);
+      console.log(`快速模式: ${config.animation.fastMode}`);
       
-      // 散落排列横屏照片
-      landscapePhotos.forEach((photo, index) => {
-        // 修复边界计算 - 确保照片完全在可视区域内
-        const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
-        const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
-        
-        // 确保随机范围不会超出边界
-        const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
-        const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
-        
-        console.log(`照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
-        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
-        
-        // 设置位置和尺寸
+      // 合并所有照片进行统一处理
+      const allPhotos = [...landscapePhotos, ...portraitPhotos];
+      
+      // 计算调整后的中心位置 - 使用配置的偏移量
+      const centerX = windowWidth / 2 + config.layout.centerOffsetX;
+      const centerY = windowHeight / 2 + config.layout.centerOffsetY;
+      
+      console.log(`窗口尺寸: ${windowWidth}x${windowHeight}`);
+      console.log(`偏移量: X=${config.layout.centerOffsetX}, Y=${config.layout.centerOffsetY}`);
+      console.log(`调整后中心位置: (${centerX}, ${centerY})`);
+      
+      // 第一阶段：所有照片聚合到中心
+      allPhotos.forEach((photo, index) => {
+        // 设置位置和尺寸 - 使用绝对定位确保精确居中
         photo.item.css({
-          'left': randomX + 'px',
-          'top': randomY + 'px',
+          'position': 'absolute',
+          'left': centerX + 'px',
+          'top': centerY + 'px',
           'width': photo.displayWidth + 'px',
           'height': photo.displayHeight + 'px',
-          'background': 'none' // 强制移除背景
+          'background': 'none',
+          'transform': 'translate(-50%, -50%)',
+          'transition': 'all 0.3s ease',
+          'margin': '0',
+          'padding': '0',
+          'opacity': '1', // 显示照片
+          'visibility': 'visible' // 显示照片
         });
+        
+        // 使用attr方法强制设置样式，覆盖CSS的!important
+        photo.item.attr('style', photo.item.attr('style') + '; opacity: 1 !important; visibility: visible !important;');
         
         // 强制移除背景色
         photo.item.css({
@@ -1177,44 +1209,43 @@ $(document).ready(function() {
           'background-image': 'none'
         });
         
-        // 添加轻微随机旋转
-        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
-        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
-      });
-      
-      // 散落排列竖屏照片
-      portraitPhotos.forEach((photo, index) => {
-        // 修复边界计算 - 确保照片完全在可视区域内
+        // 初始旋转角度为0
+        photo.item.find('.photo-wrapper').css('transform', 'rotate(0deg)');
+        
+        // 存储最终散落位置
         const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
         const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
-        
-        // 确保随机范围不会超出边界
         const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
         const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
+        const rotation = (Math.random() - 0.5) * config.layout.rotationRange;
         
-        console.log(`竖屏照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
-        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
+        // 存储最终位置和旋转角度
+        photo.finalX = randomX;
+        photo.finalY = randomY;
+        photo.finalRotation = rotation;
         
-        // 设置位置和尺寸
-        photo.item.css({
-          'left': randomX + 'px',
-          'top': randomY + 'px',
-          'width': photo.displayWidth + 'px',
-          'height': photo.displayHeight + 'px',
-          'background': 'none' // 强制移除背景
-        });
-        
-        // 强制移除背景色
-        photo.item.css({
-          'background': 'none',
-          'background-color': 'transparent',
-          'background-image': 'none'
-        });
-        
-        // 添加轻微随机旋转
-        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
-        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
+        console.log(`照片 ${index + 1}: 中心位置 -> 最终位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 旋转: ${rotation.toFixed(1)}度`);
       });
+      
+      // 第二阶段：延迟后散落到最终位置
+      setTimeout(() => {
+        console.log('开始散落照片...');
+        allPhotos.forEach((photo, index) => {
+          // 设置最终位置 - 保持绝对定位
+          photo.item.css({
+            'position': 'absolute',
+            'left': photo.finalX + 'px',
+            'top': photo.finalY + 'px',
+            'transform': 'translate(0, 0)',
+            'transition': 'all 0.8s ease-out',
+            'margin': '0',
+            'padding': '0'
+          });
+          
+          // 设置最终旋转角度
+          photo.item.find('.photo-wrapper').css('transform', `rotate(${photo.finalRotation}deg)`);
+        });
+      }, config.animation.scatterDelay * 1000);
       
       // 绑定点击事件到所有照片
       $('.scattered-photo-item').off('click').on('click', function() {

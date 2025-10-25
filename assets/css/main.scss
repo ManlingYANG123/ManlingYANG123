@@ -1,0 +1,51 @@
+@import "bootstrap/bootstrap";
+@import "custom";
+
+// 添加新的样式
+.links {
+    a {
+        margin-right: 5px;
+        border: 1px solid #ddd;
+        padding: 3px 8px;
+        
+        &:hover {
+            background-color: #f8f9fa;
+            text-decoration: none;
+        }
+        
+        i {
+            margin-right: 3px;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+} 
+
+/* timeline.css */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-date {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .timeline-content {
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }

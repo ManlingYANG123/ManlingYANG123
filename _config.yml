@@ -8,7 +8,7 @@
 # -----------BASE SETTINGS---------------#
 #========================================#
 
-title: Manling YANG
+title: Home
 email:
 description: a minimalistic Jekyll theme for academics
 baseurl:                                       # the subpath of your site, e.g. /blog

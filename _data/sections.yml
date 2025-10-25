@@ -1,23 +1,15 @@
-- name: Publications
-  id: publications
-  content:
-  url: publications.html
-  first: true
+nav_list_title: Sections List
+sections:
 
-- name: Education
-  id: education
-  content: 
-  url: education.html
-  first: false
+- title: About Me
+  url: /about/
+  description: Learn more about my background and interests
 
-# - name: Activities
-#   id: activities
-#   content: 
-#   url: activities.html
-#   first: false
+- title: Publications
+  url: /publications/
+  description: View my research publications
 
-- name: News & Activities
-  id: news
-  content: 
-  url: news.html
-  first: false
+- title: Blog
+  url: /blog/
+  description: Read my latest thoughts and updates
+

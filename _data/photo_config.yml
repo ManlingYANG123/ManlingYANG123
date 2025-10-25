@@ -1,0 +1,40 @@
+# 照片展示配置
+photo_settings:
+  # 动画设置
+  animation:
+    base_delay: 0.1  # 基础延迟时间（秒）
+    delay_increment: 0.1  # 每张照片的延迟增量（秒）
+    max_delay: 1.6  # 最大延迟时间（秒）
+    fade_duration: 0.6  # 淡入动画持续时间（秒）
+  
+  # 照片尺寸设置
+  sizing:
+    base_size_min: 200  # 基础尺寸最小值（像素）
+    base_size_max: 300  # 基础尺寸最大值（像素）
+    scale_factor: 0.25  # 缩放因子（原始尺寸的倍数）
+  
+  # 布局设置
+  layout:
+    margin: 50  # 照片间距
+    padding: 30  # 容器内边距
+    rotation_range: 10  # 旋转角度范围（度）
+    initial_position: "below_buttons"  # 初始聚合位置: "center" 或 "below_buttons"
+  
+  # 弹窗设置
+  modal:
+    background_opacity: 0.9  # 背景透明度
+    animation_duration: 0.3  # 弹窗动画持续时间（秒）
+    max_width_percent: 90  # 弹窗最大宽度百分比
+    max_height_percent: 90  # 弹窗最大高度百分比
+
+# 照片分类设置
+photo_categories:
+  digital:
+    name: "Digital Photos"
+    description: "数字照片"
+    orientation_override: null  # 如果为null，自动检测；否则强制使用指定方向
+  
+  film:
+    name: "Film Photos" 
+    description: "胶片照片"
+    orientation_override: null

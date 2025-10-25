@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% assign theme = site.data.themes[site.ui_theme] %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mx-auto border-0" style="background-color:{{theme.home-background-color}};">
+        <div class="card-header text-center" style="background-color:{{ theme.home-highlight-background }};">
+          <h2 class="mb-0" style="color:{{ theme.home-highlight-header-text }}; font-family:{{ theme.font}};">
+            📚 Publications
+          </h2>
+        </div>
+        
+        <div class="card-body">
+          <div class="publications-list">
+            {% for pub in site.data.papers %}
+            <div class="publication-item mb-4">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="publication-image">
+                    <img src="{{ pub.image | default: '/assets/img/default-paper.png' }}" 
+                         class="img-fluid rounded" 
+                         alt="Paper thumbnail"
+                         style="max-width: 120px; height: auto;">
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="publication-content">
+                    <h5 class="publication-title mb-2">
+                      <a href="{{ pub.url }}" target="_blank" style="color:{{theme.education-font-color}}; text-decoration: none;">
+                        {{ pub.title }}
+                      </a>
+                    </h5>
+                    <div class="publication-authors mb-2">
+                      {% for author in pub.authors %}
+                        {% if author.name contains "Manling" or author.name contains "Yang" %}
+                          <strong style="color:{{theme.education-font-color}}; text-decoration: underline; text-decoration-color: #ff6b6b; text-decoration-style: wavy;">{{ author.name }}</strong>{% unless forloop.last %}, {% endunless %}
+                        {% else %}
+                          <span style="color:{{theme.education-font-color}};">{{ author.name }}</span>{% unless forloop.last %}, {% endunless %}
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                    <div class="publication-venue mb-2">
+                      <em style="color:{{theme.education-font-color}};">{{ pub.venue }}</em>
+                      {% if pub.award %}
+                        <span class="badge badge-warning ml-2">{{ pub.award }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="publication-links">
+                      {% if pub.pdf %}
+                        <a href="{{ pub.pdf }}" target="_blank" class="btn btn-sm btn-outline-primary mr-2">PDF</a>
+                      {% endif %}
+                      {% if pub.code %}
+                        <a href="{{ pub.code }}" target="_blank" class="btn btn-sm btn-outline-secondary mr-2">Code</a>
+                      {% endif %}
+                      {% if pub.demo %}
+                        <a href="{{ pub.demo }}" target="_blank" class="btn btn-sm btn-outline-success mr-2">Demo</a>
+                      {% endif %}
+                      {% if pub.video %}
+                        <a href="{{ pub.video }}" target="_blank" class="btn btn-sm btn-outline-info mr-2">Video</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,15 +3,11 @@ layout: home
 title: 
 date: 2023-08-22
 ---
-### Hi, I'm Manling YANG 👋
-Welcome to my homepage! I am an MPhil at [the Hong Kong University of Science and Technology (Guangzhou)](https://www.hkust-gz.edu.cn/zh/), my prime supervisor is [**Prof. Wei ZENG**](https://zeng-wei.com/) and co-supervisor is [**Prof. Luwen YU**](https://scholar.google.com.hk/citations?hl=zh-CN&user=7k_GvIMAAAAJ). I received my BEng degree in Electronic Information Engineering from Chongqing University. My academic supervisor is [**Prof. Jinglan OU**](http://www.ccee.cqu.edu.cn/info/1400/4361.htm) from the Department of Microelectronics and Communication Engineering and my research supervisor is [**Prof. Li LIU**](http://www.cse.cqu.edu.cn/info/2095/5647.htm) from the Department of Big Data and Software.
-
-**I am actively looking for PhD position in 2025Fall!**
-
+#### **Hi, I'm Manling YANG 👋**
+I am a first-year CS Ph.D student, advised by [Prof. Remco Chang](https://www.cs.tufts.edu/~remco/) in [Visual Analytics Lab @ Tufts University (VALT)](https://valt.cs.tufts.edu/index.html). Prior to that, I received my Master degree in Computational Media and Arts from Hong Kong University of Science and Technology (Guangzhou) and my Bachelor degree in Electronic Information Engineering from Chongqing University.
 <div class="social-icons" style="font-size: 22px;">
-  <a href="mailto:myang838@connect.hkust-gz.edu.cn"><i class="fas fa-envelope"></i></a>&nbsp;
-  <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=1wQouukAAAAJ"><i class="ai ai-google-scholar"></i></a>&nbsp;
-  <a href="https://twitter.com/ManlingYang"><i class="fab fa-twitter"></i></a>
+  <a href="mailto:manling.yang@tufts.edu"><i class="fas fa-envelope"></i></a>&nbsp;
+  <a href="https://scholar.google.com/citations?user=1wQouukAAAAJ&hl=en"><i class="ai ai-google-scholar"></i></a>&nbsp;
 </div>
 <!-- [<i class="fab fa-github fa-lg"></i>](https://github.com/YOUR_GITHUB) -->
 <!-- [<i class="fab fa-linkedin fa-lg"></i>](https://www.linkedin.com/in/YOUR_LINKEDIN) -->

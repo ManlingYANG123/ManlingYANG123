@@ -28,141 +28,117 @@ layout: default
 </div>
 {% endif %}
 
-<!-- ABOUT ME SECTION -->
-<div class="card mx-auto border-0"
-     style="position:relative; background-color:{{theme.home-background-color}};">
+<!-- HEADER SECTION -->
+<div class="container-fluid mb-4">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       {% if site.animate %}
       <img src="{{ site.profile_image }}"
-           class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded"
-           alt="...">
+           class="img-fluid rounded shadow"
+           alt="Profile Image"
+           style="max-width: 200px;">
       {% else %}
-      <img src="{{ site.profile_image }}" class="img-thumbnail float-left" alt="...">
+      <img src="{{ site.profile_image }}" 
+           class="img-fluid rounded shadow" 
+           alt="Profile Image"
+           style="max-width: 200px;">
       {% endif %}
     </div>
-    <!-- EDUCATION SECTION -->
-    <div class="col-md-8">
-      {% capture educationStyle %}
-      style="color:{{theme.education-font-color}};"
-      {% endcapture %}
-      <div class="card-body{% if site.animate %} animate__animated animate__fadeInRight{% endif %}{{ educationStyle }}">
-        <p{{ educationStyle }}>{{ content | markdownify }}</p>
+    <div class="col-md-9">
+      <div class="mt-3">
+        <p style="color:{{theme.education-font-color}};">{{ content | markdownify }}</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- HOME HIGHLIGHTS SECTION -->
-{% capture cardClass %}
-card mx-auto{% if site.animate %} animate__animated animate__slideInUp animate__delay-1s{% endif %}
-{% endcapture %}
-<div class="{{ cardClass }}" style="max-width: 100%;">
-  <div class="card-header" style="background-color:{{ theme.home-highlight-background }};">
-    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
-      {% for section in site.data.sections %}
-        {% capture isActiveTab %}{% if section.first %}active{% endif %}{% endcapture %}
-        <li class="nav-item">
-          <a class="nav-link{% unless section.first %}{% endunless %}"
-             id="{{ section.jsid }}"
-             href="#{{ section.id }}"
-             role="tab"
-             aria-controls="{{ section.id }}"
-             aria-selected="{{ isActiveTab }}"
-             style="font-family:{{ theme.font}}; color:{{ theme.home-highlight-header-text }};">
-            {{ section.emoji }} {{ section.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+<!-- RESEARCH INTERESTS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Research Interests</h4>
+  <p style="color:{{theme.education-font-color}}; line-height: 1.6;">
+    My research interests lie broadly in the intersections of Visualization (InfoVIS) and Human-Computer Interaction (HCI). I am focusing on using theory-based models and methods to decompose, evaluate and reasoning visualization design, which aim to build the theoretical foundation and provide innovative viewpoint for visualization design.
+  </p>
+
+  <p style="color:{{theme.education-font-color}};">
+    There are lots of definition of "what is visualization", my favorite one comes from the book <em>Using Vision to Think</em>, which defines InfoVIS as <span style="font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;">"the use of computer-supported, interactive, visual representations of abstract data to amplify cognition."</span>
+  </p>
+  <!-- <p style="color:{{theme.education-font-color}};">I am particularly interested in:</p>
+  <ul style="color:{{theme.education-font-color}};">
+    <li><strong>Interaction with Data Visualization</strong>: designing human-data interaction tools for data visualization.</li>
+    <li><strong>Interaction Techniques in AR/VR</strong>: creating efficient interaction methods for immersive applications.</li>
+    <li><strong>Interactive Human-AI Experiences</strong>: exploring ways to enhance human-AI interaction.</li>
+  </ul> -->
+</div>
+
+<!-- RECENT NEWS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Recent News</h4>
+  <div class="news-list" style="max-height: 120px; overflow-y: auto; padding-right: 10px;">
+    {% for event in site.data.news %}
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:{{theme.education-font-color}};">[{{ event.Date }}]</span> 
+      <span style="color:{{theme.education-font-color}};">{{ event.content }}</span>
+    </div>
+    {% endfor %}
   </div>
-  <div class="card-body">
-    <div class="tab-content mt-3">
-      {% for section in site.data.sections %}
-        {% if section.name == "Publications" %}
-        <div class="tab-pane {% if section.first %}active{% endif %} overflow-auto"
-             id="{{ section.id }}"
-             role="tabpanel">
-          <p><i>{{ section.description }}</i></p>
-          <p class="card-text">{% bibliography -f papers %}</p>
+</div>
+
+<!-- SELECTED PUBLICATIONS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Selected Publications</h4>
+  
+  <div class="publications-list">
+    {% for pub in site.data.papers limit:6 %}
+    <div class="publication-item mb-3" id="pub-{{ forloop.index }}">
+      <div class="row">
+        <div class="col-md-2">
+          {% if pub.image %}
+            <div class="publication-image">
+              <img src="{{ pub.image }}" alt="{{ pub.title }}" class="img-fluid" style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+          {% endif %}
         </div>
-        {% elsif section.name == "Projects" %}
-        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
-          <p><i>{{ section.description }}</i></p>
-          {% for project in site.data.projects %}
-          <div class="media mt-2">
-            <a href="{{ project.link }}"><img src="{{ project.image }}" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
-            <div class="media-body">
-              <h6 class="mt-0"><a href="{{ project.link }}" class="highlighted"><strong>{{ project.name }}</strong></a></h6>
-              {{ project.description }}
-              {% if project.tech %}
-              <h6>Technologies</h6>
-              {% for tech in project.tech %}
-              <span class="badge badge-secondary mr-1" style="background-color:{{ theme.projects-color }};">{{ tech }}</span>
+        <div class="col-md-10">
+          <div class="publication-content">
+            <div class="publication-title mb-1">
+              <a href="{{ pub.url }}" target="_blank" style="color:{{theme.education-font-color}}; text-decoration: none; font-weight: 600;">
+                {{ pub.title }}
+              </a>
+            </div>
+            <div class="publication-authors mb-1" style="font-size: 0.9rem;">
+              {% for author in pub.authors %}
+                {% if author.name contains "Manling" or author.name contains "Yang" %}
+                  <span class="highlight-name" style="color:{{theme.education-font-color}}; position: relative; display: inline-block;">{{ author.name }}</span>{% unless forloop.last %}, {% endunless %}
+                {% else %}
+                  <span style="color:{{theme.education-font-color}};">{{ author.name }}</span>{% unless forloop.last %}, {% endunless %}
+                {% endif %}
               {% endfor %}
+            </div>
+            <div class="publication-venue mb-2" style="font-size: 0.9rem; color:{{theme.education-font-color}};">
+              <em>{{ pub.venue }}</em>
+              {% if pub.award %}
+                <span class="badge badge-warning ml-2" style="font-size: 0.7rem;">{{ pub.award }}</span>
+              {% endif %}
+            </div>
+            <div class="publication-links">
+              {% if pub.pdf %}
+                <a href="{{ pub.pdf }}" target="_blank" class="btn btn-sm btn-outline-primary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">PDF</a>
+              {% endif %}
+              {% if pub.code %}
+                <a href="{{ pub.code }}" target="_blank" class="btn btn-sm btn-outline-secondary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Code</a>
+              {% endif %}
+              {% if pub.demo %}
+                <a href="{{ pub.demo }}" target="_blank" class="btn btn-sm btn-outline-success mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Demo</a>
+              {% endif %}
+              {% if pub.video %}
+                <a href="{{ pub.video }}" target="_blank" class="btn btn-sm btn-outline-info mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Video</a>
               {% endif %}
             </div>
           </div>
-          {% endfor %}
         </div>
-
-        {% elsif section.name == "Education" %}
-        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
-          <p><i>{{ section.description }}</i></p>
-          <div class="list-group">
-            {% for education in site.data.education %}
-            <div class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1"><strong>{{ education.School }}</strong></h6>
-                <h6 class="mb-1"><strong>{{ education.StartDate }} - {{ education.EndDate }}</strong></h6>
-              </div>
-              <h6>{{ education.Program }}</h6>
-              <h6>{{ education.Department }}</h6>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-        {% elsif section.name == "Activities" %}
-        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
-          <p><i>{{ section.description }}</i></p>
-          <div class="list-group">
-            {% for activity in site.data.activities %}
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="{{ activity.MeetingLink }}" target="_blank">{{ activity.Activity }}</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> {{ activity.Date }}</p>
-                <p class="mb-1"><strong>Location:</strong> {{ activity.Location }}</p>
-                <p class="mb-1"><strong>Description:</strong> {{ activity.Description }}</p>
-              </div>
-            {% endfor %}
-          </div>
-        </div>        
-        {% elsif section.name == "News & Activities" %}
-        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
-          <p class="section-description"><i>{{ section.description }}</i></p>
-          <div class="timeline-container">
-            <div class="timeline">
-              {% for event in site.data.news %}
-                <div class="timeline-item">
-                  <!-- <p class="timeline-text"><strong>{{ event.Date }}</strong>: {{ event.content }}</p>             -->
-                  <p class="timeline-text">{{ event.Date }}: {{ event.content }}</p>
-
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-        {% else %}
-        <div class="tab-pane overflow-auto" id="{{ section.id }}" role="tabpanel" aria-labelledby="{{ section.id }}-tab">
-          <h5 class="card-title text-center"><a href="/{{ section.url }}" class="highlighted">{{ section.description }}</a></h5>
-          <p class="card-text">{{ section.content }}</p>
-        </div>
-        {% endif %}
-      {% endfor %}
+      </div>
     </div>
+    {% endfor %}
   </div>
 </div>
 

@@ -1,0 +1,550 @@
+---
+layout: default
+---
+
+{% assign theme = site.data.themes[site.ui_theme] %}
+
+<div class="photo-gallery" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+  <!-- 照片分类标签 -->
+  <div class="photo-tabs mb-4">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="digital">
+        <span>Digital Photos</span>
+      </button>
+      <button class="tab-btn" data-tab="film">
+        <span>Film Photos</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Digital Photos -->
+  <div class="scattered-photos-container" id="digital-photos">
+    {% for photo in site.data.photo %}
+    <div class="scattered-photo-item" data-index="{{ forloop.index }}">
+      <div class="photo-wrapper">
+        <img src="{{ photo.image }}" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Film Photos -->
+  <div class="scattered-photos-container" id="film-photos" style="display: none;">
+    {% for photo in site.data.film %}
+    <div class="scattered-photo-item" data-index="{{ forloop.index }}">
+      <div class="photo-wrapper">
+        <img src="{{ photo.image }}" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 照片弹窗 -->
+<div id="photoModal" class="photo-modal">
+  <div class="photo-modal-content">
+    <span class="photo-modal-close">&times;</span>
+    <img id="modalImage" src="" alt="">
+  </div>
+</div>
+
+
+<style>
+.photo-gallery {
+  min-height: 100vh;
+  position: relative;
+  padding: 20px;
+}
+
+.photo-tabs {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tab-buttons {
+  display: inline-flex;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.tab-btn.active {
+  background-color: #7F3B83;
+  color: white;
+  box-shadow: 0 2px 8px rgba(127, 59, 131, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.scattered-photos-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* 确保有足够高度进行居中 */
+  overflow: visible;
+  padding: 10px 20px 20px 20px; /* 减少顶部padding让照片更贴近按钮 */
+}
+
+.scattered-photo-item {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  background: transparent !important; /* 强制确保没有背景色 */
+  /* 初始位置：根据配置设置 */
+  left: 42.2125%; /* 再向左移动0.0375% */
+  {% if site.data.photo_config.photo_settings.layout.initial_position == "center" %}
+  top: 50%;
+  {% else %}
+  top: 70px; /* tab-buttons容器下方居中位置，考虑按钮高度和间距 */
+  {% endif %}
+  transform: translate(-50%, -50%);
+}
+
+.scattered-photo-item:hover {
+  z-index: 10;
+  transform: scale(1.05) !important;
+}
+
+.photo-wrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  background: transparent !important; /* 强制确保没有背景色 */
+}
+
+.scattered-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important; /* 填满容器，保持比例，无白边 */
+  display: block;
+  background: none !important; /* 强制移除背景 */
+  background-color: transparent !important; /* 强制透明背景 */
+  background-image: none !important; /* 强制移除背景图片 */
+}
+
+
+/* 最高优先级：强制移除所有背景和透明度 */
+.scattered-photo-item,
+.scattered-photo-item *,
+.scattered-photo-item img,
+img.scattered-photo,
+.photo-wrapper,
+.scattered-photo {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  opacity: 1 !important; /* 确保不透明 */
+}
+
+/* 强制移除所有可能的背景设置 - 最高优先级 */
+img[class*="scattered-photo"],
+.scattered-photo-item img,
+.photo-wrapper img {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  background-clip: initial !important;
+  background-origin: initial !important;
+  background-size: initial !important;
+  background-position: initial !important;
+  background-repeat: initial !important;
+}
+
+/* 移除可能的半透明效果 */
+.scattered-photo-item::before,
+.scattered-photo-item::after,
+.photo-wrapper::before,
+.photo-wrapper::after {
+  display: none !important;
+}
+
+/* 照片弹窗样式 */
+.photo-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, {{ site.data.photo_config.photo_settings.modal.background_opacity }});
+  animation: fadeIn {{ site.data.photo_config.photo_settings.modal.animation_duration }}s ease;
+}
+
+.photo-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: {{ site.data.photo_config.photo_settings.modal.max_width_percent }}%;
+  height: {{ site.data.photo_config.photo_settings.modal.max_height_percent }}%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.photo-modal-close:hover {
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .photo-gallery {
+    padding: 10px;
+  }
+  
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .scattered-photos-container {
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .scattered-photo-item {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scattered-photo-item {
+  animation: fadeInUp {{ site.data.photo_config.photo_settings.animation.fade_duration }}s ease forwards;
+}
+
+/* 动态生成动画延迟 - 通过JavaScript设置 */
+
+/* 最高优先级：强制移除所有背景 - 最后执行 */
+.scattered-photo,
+.scattered-photo-item img,
+img.scattered-photo,
+img[class*="scattered-photo"] {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+  // 获取配置
+  const config = {
+    animation: {
+      baseDelay: {{ site.data.photo_config.photo_settings.animation.base_delay }},
+      delayIncrement: {{ site.data.photo_config.photo_settings.animation.delay_increment }},
+      maxDelay: {{ site.data.photo_config.photo_settings.animation.max_delay }},
+      fadeDuration: {{ site.data.photo_config.photo_settings.animation.fade_duration }}
+    },
+    sizing: {
+      baseSizeMin: {{ site.data.photo_config.photo_settings.sizing.base_size_min }},
+      baseSizeMax: {{ site.data.photo_config.photo_settings.sizing.base_size_max }},
+      scaleFactor: {{ site.data.photo_config.photo_settings.sizing.scale_factor }}
+    },
+    layout: {
+      margin: {{ site.data.photo_config.photo_settings.layout.margin }},
+      padding: {{ site.data.photo_config.photo_settings.layout.padding }},
+      rotationRange: {{ site.data.photo_config.photo_settings.layout.rotation_range }}
+    },
+    modal: {
+      backgroundOpacity: {{ site.data.photo_config.photo_settings.modal.background_opacity }},
+      animationDuration: {{ site.data.photo_config.photo_settings.modal.animation_duration }},
+      maxWidthPercent: {{ site.data.photo_config.photo_settings.modal.max_width_percent }},
+      maxHeightPercent: {{ site.data.photo_config.photo_settings.modal.max_height_percent }}
+    }
+  };
+
+  // 按横纵比排列照片
+  function generateRandomPositions(containerId) {
+    const container = $('#' + containerId);
+    const items = container.find('.scattered-photo-item');
+    // 使用视口宽度而不是窗口宽度，避免container边距影响
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    
+    console.log('开始排列照片，总数:', items.length);
+    
+    // 设置动态动画延迟
+    items.each(function(index) {
+      const delay = Math.min(
+        config.animation.baseDelay + (index * config.animation.delayIncrement),
+        config.animation.maxDelay
+      );
+      $(this).css('animation-delay', delay + 's');
+    });
+    
+      // 分类照片：横屏和竖屏
+      const landscapePhotos = [];
+      const portraitPhotos = [];
+    
+    // 先加载所有图片并分类
+    let loadedCount = 0;
+    const totalPhotos = items.length;
+    
+    items.each(function(index) {
+      const item = $(this);
+      const img = item.find('img');
+      
+      // 确保图片已经加载
+      if (img[0].complete && img[0].naturalWidth > 0) {
+        processImage(item, img[0]);
+      } else {
+        img.on('load', function() {
+          processImage(item, this);
+        });
+      }
+      
+        function processImage(item, imgElement) {
+          const imgWidth = imgElement.naturalWidth;
+          const imgHeight = imgElement.naturalHeight;
+          const aspectRatio = imgWidth / imgHeight;
+          
+          // 从数据中获取orientation标记
+          const photoData = item.data('photo-data');
+          let orientation = 'landscape'; // 默认值
+          
+          if (photoData) {
+            // 优先使用orientation字段
+            if (photoData.orientation) {
+              orientation = photoData.orientation;
+            } else if (photoData.tags) {
+              // 如果没有orientation字段，从tags中获取
+              if (photoData.tags.includes('horizontal') || photoData.tags.includes('landscape')) {
+                orientation = 'landscape';
+              } else if (photoData.tags.includes('vertical') || photoData.tags.includes('portrait')) {
+                orientation = 'portrait';
+              }
+            }
+          }
+          
+          console.log(`处理照片 ${loadedCount + 1}: ${imgWidth}x${imgHeight}, 比例: ${aspectRatio.toFixed(2)}, 标记: ${orientation}`);
+          
+          // 根据标记和原始横纵比计算显示尺寸
+          let displayWidth, displayHeight;
+          
+          if (orientation === 'landscape') { // 横屏照片 - 保持原始比例
+            displayWidth = config.sizing.baseSizeMin + Math.random() * (config.sizing.baseSizeMax - config.sizing.baseSizeMin);
+            displayHeight = (imgHeight / imgWidth) * displayWidth;
+            landscapePhotos.push({ item, imgWidth, imgHeight, displayWidth, displayHeight, aspectRatio });
+            console.log(`横屏照片: ${displayWidth.toFixed(0)}x${displayHeight.toFixed(0)} (原始比例: ${aspectRatio.toFixed(2)})`);
+          } else { // 竖屏照片 - 保持原始比例
+            displayHeight = config.sizing.baseSizeMin + Math.random() * (config.sizing.baseSizeMax - config.sizing.baseSizeMin);
+            displayWidth = (imgWidth / imgHeight) * displayHeight;
+            portraitPhotos.push({ item, imgWidth, imgHeight, displayWidth, displayHeight, aspectRatio });
+            console.log(`竖屏照片: ${displayWidth.toFixed(0)}x${displayHeight.toFixed(0)} (原始比例: ${aspectRatio.toFixed(2)})`);
+          }
+          
+          loadedCount++;
+          
+          // 所有图片加载完成后开始排列
+          if (loadedCount === totalPhotos) {
+            console.log('所有照片加载完成，开始排列');
+            arrangePhotos();
+          }
+        }
+    });
+    
+    function arrangePhotos() {
+      const margin = config.layout.margin; // 使用配置的间距
+      const padding = config.layout.padding;
+      
+      console.log(`横屏照片: ${landscapePhotos.length}张`);
+      console.log(`竖屏照片: ${portraitPhotos.length}张`);
+      
+      // 散落排列横屏照片
+      landscapePhotos.forEach((photo, index) => {
+        // 修复边界计算 - 确保照片完全在可视区域内
+        const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
+        const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
+        
+        // 确保随机范围不会超出边界
+        const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
+        const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
+        
+        console.log(`照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
+        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
+        
+        // 设置位置和尺寸
+        photo.item.css({
+          'left': randomX + 'px',
+          'top': randomY + 'px',
+          'width': photo.displayWidth + 'px',
+          'height': photo.displayHeight + 'px',
+          'background': 'none' // 强制移除背景
+        });
+        
+        // 强制移除背景色
+        photo.item.css({
+          'background': 'none',
+          'background-color': 'transparent',
+          'background-image': 'none'
+        });
+        
+        // 添加轻微随机旋转
+        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
+        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
+      });
+      
+      // 散落排列竖屏照片
+      portraitPhotos.forEach((photo, index) => {
+        // 修复边界计算 - 确保照片完全在可视区域内
+        const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
+        const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
+        
+        // 确保随机范围不会超出边界
+        const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
+        const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
+        
+        console.log(`竖屏照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
+        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
+        
+        // 设置位置和尺寸
+        photo.item.css({
+          'left': randomX + 'px',
+          'top': randomY + 'px',
+          'width': photo.displayWidth + 'px',
+          'height': photo.displayHeight + 'px',
+          'background': 'none' // 强制移除背景
+        });
+        
+        // 强制移除背景色
+        photo.item.css({
+          'background': 'none',
+          'background-color': 'transparent',
+          'background-image': 'none'
+        });
+        
+        // 添加轻微随机旋转
+        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
+        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
+      });
+      
+      // 绑定点击事件到所有照片
+      $('.scattered-photo-item').off('click').on('click', function() {
+        console.log('照片被点击了！');
+        const imgSrc = $(this).find('img').attr('src');
+        $('#modalImage').attr('src', imgSrc);
+        $('#photoModal').show();
+      });
+    }
+  }
+  
+  // 关闭弹窗功能
+  $('.photo-modal-close').click(function() {
+    $('#photoModal').hide();
+  });
+  
+  // 点击弹窗背景关闭
+  $('#photoModal').click(function(e) {
+    if (e.target === this) {
+      $('#photoModal').hide();
+    }
+  });
+  
+  // ESC键关闭弹窗
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) { // ESC键
+      $('#photoModal').hide();
+    }
+  });
+  
+  // 标签页切换功能
+  $('.tab-btn').click(function() {
+    var tab = $(this).data('tab');
+    
+    // 更新按钮状态
+    $('.tab-btn').removeClass('active');
+    $(this).addClass('active');
+    
+    // 切换内容
+    if (tab === 'digital') {
+      $('#digital-photos').show();
+      $('#film-photos').hide();
+      setTimeout(() => generateRandomPositions('digital-photos'), 100);
+    } else if (tab === 'film') {
+      $('#digital-photos').hide();
+      $('#film-photos').show();
+      setTimeout(() => generateRandomPositions('film-photos'), 100);
+    }
+  });
+  
+  
+  // 点击页面其他地方关闭放大
+  $(document).click(function(e) {
+    if (!$(e.target).closest('.scattered-photo-item').length) {
+      $('.scattered-photo-item').removeClass('expanded');
+    }
+  });
+  
+  // 初始化数字照片位置
+  setTimeout(() => generateRandomPositions('digital-photos'), 500);
+  
+  // 窗口大小改变时重新排列
+  $(window).resize(function() {
+    const activeTab = $('.tab-btn.active').data('tab');
+    if (activeTab === 'digital') {
+      generateRandomPositions('digital-photos');
+    } else if (activeTab === 'film') {
+      generateRandomPositions('film-photos');
+    }
+  });
+});
+</script>

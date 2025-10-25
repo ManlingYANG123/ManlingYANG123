@@ -123,8 +123,8 @@ body, html {
   background: transparent !important; /* 强制确保没有背景色 */
   margin: 0 !important;
   padding: 0 !important;
-  opacity: 0; /* 初始隐藏，避免闪烁 */
-  visibility: hidden; /* 双重隐藏确保不显示 */
+  opacity: 0; /* 初始隐藏，等待JavaScript显示 */
+  visibility: hidden; /* 初始隐藏，等待JavaScript显示 */
   /* 初始位置：根据配置设置 */
   {% if site.data.photo_config.photo_settings.layout.initial_position == "scattered" %}
   /* 散落模式：初始位置随机，由JavaScript设置 */
@@ -472,6 +472,9 @@ $(document).ready(function() {
           'opacity': '1', // 显示照片
           'visibility': 'visible' // 显示照片
         });
+        
+        // 使用attr方法强制设置样式，覆盖CSS的!important
+        photo.item.attr('style', photo.item.attr('style') + '; opacity: 1 !important; visibility: visible !important;');
         
         // 强制移除背景色
         photo.item.css({

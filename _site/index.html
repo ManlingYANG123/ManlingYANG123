@@ -8,7 +8,7 @@
   to consistently ensure proper document rendering.
   Any other head element should come *after* these tags.
  -->
-<title>Manling YANG</title>
+<title>Home</title>
 <!-- Set the base URL for all relative URLs within the document -->
 <base href="https://manlingyang.org">
 
@@ -86,11 +86,11 @@
 <meta property="fb:app_id" content="">
 <meta property="og:url" content="https://manlingyang.org">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Manling YANG, a minimalistic Jekyll theme for academics">
+<meta property="og:title" content="Home, a minimalistic Jekyll theme for academics">
 <meta property="og:image" content="/assets/img/dumbarton.png">
 <meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
 <meta property="og:description" content="a minimalistic Jekyll theme for academics">
-<meta property="og:site_name" content="Manling YANG">
+<meta property="og:site_name" content="Home">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
 
@@ -150,7 +150,7 @@
   <body style="background-color:;">
     
 <nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:;background-color:#E4D3DB;">
-  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#7F3B83;">Manling YANG</h4></a>
+  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#7F3B83;">Home</h4></a>
   <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-caret-down"></i>
   </button>
@@ -159,6 +159,10 @@
         
               <li class="nav-item">
                   <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Vitae</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="/photo/" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Photos</a>
               </li>
         
     </ul>
@@ -178,33 +182,24 @@
 <!-- This section is used only for development mode. Disable it in _config.yml with `help_tips: false`. -->
 
 
-<!-- ABOUT ME SECTION -->
-<div class="card mx-auto border-0"
-     style="position:relative; background-color:;">
+<!-- HEADER SECTION -->
+<div class="container-fluid mb-4">
   <div class="row">
-    <div class="col-md-4">
-        <div class="image-hover-container">
-          <img src="/assets/img/avatar/cropped.png" class="img-thumbnail main-image shadow bg-white rounded" alt="Main Image">
-          <img src="/assets/img/avatar/hover.png" class="img-thumbnail hover-image shadow bg-white rounded" alt="Hover Image">
-        </div>
-      </div>
-    <!-- EDUCATION SECTION -->
-    <div class="col-md-8">
+    <div class="col-md-3">
       
-      <div class="card-body animate__animated animate__fadeInRight
-      style="color:;"
-      ">
-        <p
-      style="color:;"
-      ><h3 id="hi-im-manling-yang-">Hi, I’m Manling YANG 👋</h3>
-<p>Welcome to my homepage! I am an MPhil at <a href="https://www.hkust-gz.edu.cn/zh/">the Hong Kong University of Science and Technology (Guangzhou)</a>, my prime supervisor is <a href="https://zeng-wei.com/"><strong>Prof. Wei ZENG</strong></a> and co-supervisor is <a href="https://scholar.google.com.hk/citations?hl=zh-CN&amp;user=7k_GvIMAAAAJ"><strong>Prof. Luwen YU</strong></a>. I received my BEng degree in Electronic Information Engineering from Chongqing University. My academic supervisor is <a href="http://www.ccee.cqu.edu.cn/info/1400/4361.htm"><strong>Prof. Jinglan OU</strong></a> from the Department of Microelectronics and Communication Engineering and my research supervisor is <a href="http://www.cse.cqu.edu.cn/info/2095/5647.htm"><strong>Prof. Li LIU</strong></a> from the Department of Big Data and Software.</p>
-
-<p><strong>I am actively looking for PhD position in 2025Fall!</strong></p>
-
+      <img src="/assets/img/avatar/cropped.png"
+           class="img-fluid rounded shadow"
+           alt="Profile Image"
+           style="max-width: 200px;">
+      
+    </div>
+    <div class="col-md-9">
+      <div class="mt-3">
+        <p style="color:;"><h4 id="hi-im-manling-yang-"><strong>Hi, I’m Manling YANG 👋</strong></h4>
+<p>I am a first-year CS Ph.D student, advised by <a href="https://www.cs.tufts.edu/~remco/">Prof. Remco Chang</a> in <a href="https://valt.cs.tufts.edu/index.html">Visual Analytics Lab @ Tufts University (VALT)</a>. Prior to that, I received my Master degree in Computational Media and Arts from Hong Kong University of Science and Technology (Guangzhou) and my Bachelor degree in Electronic Information Engineering from Chongqing University.</p>
 <div class="social-icons" style="font-size: 22px;">
-  <a href="mailto:myang838@connect.hkust-gz.edu.cn"><i class="fas fa-envelope"></i></a>&nbsp;
-  <a href="https://scholar.google.com.hk/citations?hl=zh-CN&amp;user=1wQouukAAAAJ"><i class="ai ai-google-scholar"></i></a>&nbsp;
-  <a href="https://twitter.com/ManlingYang"><i class="fab fa-twitter"></i></a>
+  <a href="mailto:manling.yang@tufts.edu"><i class="fas fa-envelope"></i></a>&nbsp;
+  <a href="https://scholar.google.com/citations?user=1wQouukAAAAJ&amp;hl=en"><i class="ai ai-google-scholar"></i></a>&nbsp;
 </div>
 <!-- [<i class="fab fa-github fa-lg"></i>](https://github.com/YOUR_GITHUB) -->
 <!-- [<i class="fab fa-linkedin fa-lg"></i>](https://www.linkedin.com/in/YOUR_LINKEDIN) -->
@@ -219,588 +214,342 @@
   </div>
 </div>
 
-<!-- HOME HIGHLIGHTS SECTION -->
+<!-- RESEARCH INTERESTS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Research Interests</h4>
+  <p style="color:; line-height: 1.6;">
+    My research interests lie broadly in the intersections of Visualization (InfoVIS) and Human-Computer Interaction (HCI). I am focusing on using theory-based models and methods to decompose, evaluate and reasoning visualization design, which aim to build the theoretical foundation and provide innovative viewpoint for visualization design.
+  </p>
 
-<div class="
-card mx-auto animate__animated animate__slideInUp animate__delay-1s
-" style="max-width: 100%;">
-  <div class="card-header" style="background-color:#E4D3DB;">
-    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
-      
-        
-        <li class="nav-item">
-          <a class="nav-link"
-             id=""
-             href="#publications"
-             role="tab"
-             aria-controls="publications"
-             aria-selected="active"
-             style="font-family:Poppins; color:#7F3B83;">
-             Publications
-          </a>
-        </li>
-      
-        
-        <li class="nav-item">
-          <a class="nav-link"
-             id=""
-             href="#education"
-             role="tab"
-             aria-controls="education"
-             aria-selected=""
-             style="font-family:Poppins; color:#7F3B83;">
-             Education
-          </a>
-        </li>
-      
-        
-        <li class="nav-item">
-          <a class="nav-link"
-             id=""
-             href="#activities"
-             role="tab"
-             aria-controls="activities"
-             aria-selected=""
-             style="font-family:Poppins; color:#7F3B83;">
-             Activities
-          </a>
-        </li>
-      
-    </ul>
-  </div>
-  <div class="card-body">
-    <div class="tab-content mt-3">
-      
-        
-        <div class="tab-pane active overflow-auto"
-             id="publications"
-             role="tabpanel">
-          <p><i></i></p>
-          <p class="card-text"><ol class="bibliography"><li><div class="row">
-  <div id="yang2024" class="col-sm-12">
-    
-      <div class="title font-weight-bold">Dashboard Vision: Using Eye-Tracking to Understand and Predict Dashboard Viewing Behaviors</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Manling Yang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Yihan Hou,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Ling Li,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Remco Chang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Wei Zeng
-                
-              
-            
-          
-        
-      </div>
+  <p style="color:;">
+    There are lots of definition of "what is visualization", my favorite one comes from the book <em>Using Vision to Think</em>, which defines InfoVIS as <span style="font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;">"the use of computer-supported, interactive, visual representations of abstract data to amplify cognition."</span>
+  </p>
+  <!-- <p style="color:;">I am particularly interested in:</p>
+  <ul style="color:;">
+    <li><strong>Interaction with Data Visualization</strong>: designing human-data interaction tools for data visualization.</li>
+    <li><strong>Interaction Techniques in AR/VR</strong>: creating efficient interaction methods for immersive applications.</li>
+    <li><strong>Interactive Human-AI Experiences</strong>: exploring ways to enhance human-AI interaction.</li>
+  </ul> -->
+</div>
 
-      <div class="periodical">
-      
-        <em>IEEE Transactions on Visualization and Computer Graphics, Accepted</em>
-      
-      
-        2025
-      
-      </div>
+<!-- RECENT NEWS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Recent News</h4>
+  <div class="news-list" style="max-height: 120px; overflow-y: auto; padding-right: 10px;">
     
-
-    <div class="links">
-    
-    
-    
-      <a href="https://manlingyang123.github.io/Dashboard-Vision/" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-external-link-alt"></i> Link
-      </a>
-    
-    
-    
-    
-    
-      <a href="https://osf.io/eyvda/" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-        <i class="fas fa-code"></i> Code
-      </a>
-    
-    
-    
-    
-    
-      <a href="https://osf.io/eyvda/" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-        <i class="fas fa-database"></i> Dataset
-      </a>
-    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[11/2025 🙋🏻‍♀️]</span> 
+      <span style="color:;">Will attend VIS'25 in Vienna, Dashboard Vision and Finflier will be presented. See you in Nov.</span>
     </div>
-
-    <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="hao2024" class="col-sm-12">
-    
-      <div class="title font-weight-bold">FinFlier: Automating Graphical Overlays for Financial Visualizations with Knowledge-Grounding Large Language Model</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Jianing Hao,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Manling Yang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Qing Shi,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Yuzhe Jiang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Guang Zhang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Wei Zeng
-                
-              
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>IEEE Transactions on Visualization and Computer Graphics, Accepted</em>
-      
-      
-        2025
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://ieeexplore.ieee.org/abstract/document/10787087" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-external-link-alt"></i> Link
-      </a>
-    
-    
-      <a href="/assets/pdf/jianingtvcg2025.pdf" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-file-pdf"></i> PDF
-      </a>
-    
-    
-    
-    
-      <a href="https://github.com/CatherineHao/FinFlier" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-        <i class="fas fa-code"></i> Code
-      </a>
-    
-    
-    
-    
-    
-      <a href="https://osf.io/xb2rd/" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-        <i class="fas fa-database"></i> Dataset
-      </a>
-    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[09/2025 📍]</span> 
+      <span style="color:;">I joined VALT Lab as a PhD student.</span>
     </div>
-
-    <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="hou2024c2ideas" class="col-sm-12">
-    
-      <div class="title font-weight-bold">C2Ideas: Supporting Creative Interior Color Design Ideation with Large Language Model</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Yihan Hou,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Manling Yang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Hao Cui,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Lei Wang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Jie Xu,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Wei Zeng
-                
-              
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>ACM CHI Conference on Human Factors in Computing Systems (CHI2024)</em>
-      
-      
-        2024
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://dl.acm.org/doi/abs/10.1145/3613904.3642224" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-external-link-alt"></i> Link
-      </a>
-    
-    
-      <a href="/assets/pdf/yihanchi24.pdf" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-file-pdf"></i> PDF
-      </a>
-    
-    
-    
-    
-    
-    
-    
-    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[01/2025 🎊]</span> 
+      <span style="color:;">Our paper Dashboard Vision has been accepted by IEEE TVCG.</span>
     </div>
-
-    <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="yang2022survey" class="col-sm-12">
-    
-      <div class="title font-weight-bold">A Survey of Computer Vision-Based Fall Detection and Technology Perspectives</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Manling Yang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Xiaohu Li,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Jiawei Liu,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Shu Wang,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Li Liu
-                
-              
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>In CCF Conference on Computer Supported Cooperative Work and Social Computing (ChineseCSCW 2022)</em>
-      
-      
-        2022
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://link.springer.com/chapter/10.1007/978-981-99-2385-4_45" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-external-link-alt"></i> Link
-      </a>
-    
-    
-      <a href="/assets/pdf/manglingchinesecsce2022.pdf" 
-         class="btn btn-sm z-depth-0" 
-         role="button" 
-         target="_blank">
-          <i class="fas fa-file-pdf"></i> PDF
-      </a>
-    
-    
-    
-    
-    
-    
-    
-    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[01/2025 🎊]</span> 
+      <span style="color:;">Our paper GenColor has been accepted by CHI'25.</span>
     </div>
-
-    <!-- Hidden abstract block -->
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[12/2024 🎊]</span> 
+      <span style="color:;">Our paper FinFlier has been accepted by IEEE TVCG.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[05/2024 👀]</span> 
+      <span style="color:;">Attending CHI'24 as an attendee in Honolulu, Hawaii, USA.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[01/2024 🎊]</span> 
+      <span style="color:;">Our paper C2Ideas has been accepted by CHI'24.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[09/2023 🙋🏻‍♀️]</span> 
+      <span style="color:;">Attending VINCI'23 as a student volunteer in Guangzhou, Guangdong, China.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[09/2023 📍]</span> 
+      <span style="color:;">I joined CIVAL Lab as an MPhil.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[07/2023 👀]</span> 
+      <span style="color:;">Attending ChinaVis'23 in Chongqing, China.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[06/2023 📍]</span> 
+      <span style="color:;">My journey in visualization started, as a Research Assistant in CIVAL Lab.</span>
+    </div>
+    
+    <div class="news-item mb-1" style="font-size: 0.9rem;">
+      <span class="news-date-monospace" style="color:;">[01/2022 👀]</span> 
+      <span style="color:;">Attending ChineseCSCW'22 to present our paper in Taiyuan, Shanxi, China.</span>
+    </div>
     
   </div>
-</div></li></ol></p>
+</div>
+
+<!-- SELECTED PUBLICATIONS SECTION -->
+<div class="container-fluid mb-4">
+  <h4 class="mb-3 section-title-purple" style="font-size: 1.1rem; font-weight: bold;">Selected Publications</h4>
+  
+  <div class="publications-list">
+    
+    <div class="publication-item mb-3" id="pub-1">
+      <div class="row">
+        <div class="col-md-2">
+          
+            <div class="publication-image">
+              <img src="/assets/img/pubs/gencolor.jpg" alt="GenColor: Generative Color-Concept Association in Visual Design" class="img-fluid" style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+          
         </div>
-        
-      
-        
-        <div class="tab-pane overflow-auto" id="education" role="tabpanel" aria-labelledby="education-tab">
-          <p><i></i></p>
-          <div class="list-group">
-            
-            <div class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1"><strong>The Hong Kong University of Science and Technology (Guangzhou)</strong></h6>
-                <h6 class="mb-1"><strong>01/09/2023 - Present</strong></h6>
-              </div>
-              <h6>Master of Philosophy</h6>
-              <h6>Information Hub, Computational Media and Arts Thrust</h6>
+        <div class="col-md-10">
+          <div class="publication-content">
+            <div class="publication-title mb-1">
+              <a href="https://dl.acm.org/doi/10.1145/3706598.3713418" target="_blank" style="color:; text-decoration: none; font-weight: 600;">
+                GenColor: Generative Color-Concept Association in Visual Design
+              </a>
             </div>
-            
-            <div class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1"><strong>Chongqing University</strong></h6>
-                <h6 class="mb-1"><strong>01/09/2019 - 30/06/2023</strong></h6>
-              </div>
-              <h6>BEng in Electronic Information Engineering</h6>
-              <h6>School of Microelectronics and Communication Engineering</h6>
+            <div class="publication-authors mb-1" style="font-size: 0.9rem;">
+              
+                
+                  <span style="color:;">Yihan Hou</span>, 
+                
+              
+                
+                  <span style="color:;">Xingchen Zeng</span>, 
+                
+              
+                
+                  <span style="color:;">Yusong Wang</span>, 
+                
+              
+                
+                  <span class="highlight-name" style="color:; position: relative; display: inline-block;">Manling YANG</span>, 
+                
+              
+                
+                  <span style="color:;">Xiaojiao Chen</span>, 
+                
+              
+                
+                  <span style="color:;">Wei Zeng</span>
+                
+              
             </div>
-            
+            <div class="publication-venue mb-2" style="font-size: 0.9rem; color:;">
+              <em>ACM CHI Conference on Human Factors in Computing Systems (CHI2025)</em>
+              
+                <span class="badge badge-warning ml-2" style="font-size: 0.7rem;"></span>
+              
+            </div>
+            <div class="publication-links">
+              
+                <a href="/assets/pdf/yihanchi25.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">PDF</a>
+              
+              
+                <a href="https://github.com/Sunnary2604/GenColor" target="_blank" class="btn btn-sm btn-outline-secondary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Code</a>
+              
+              
+              
+            </div>
           </div>
         </div>
-        
-      
-        
-        <div class="tab-pane overflow-auto" id="activities" role="tabpanel" aria-labelledby="activities-tab">
-          <p><i></i></p>
-          <div class="list-group">
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://chi2024.acm.org/" target="_blank">CHI 2024 - ACM Conference on Human Factors in Computing Systems</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 11/05/2024 - 16/05/2024</p>
-                <p class="mb-1"><strong>Location:</strong> Honolulu, Hawaii, USA</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://vinci-symp.org/" target="_blank">VINCI 2023 - The 16th International Symposium on Visual Information Communication and Interaction</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 22/09/2023 - 24/09/2023</p>
-                <p class="mb-1"><strong>Location:</strong> Guangzhou, Guangdong, China</p>
-                <p class="mb-1"><strong>Description:</strong> Volunteer</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://chinavis.org/2023/" target="_blank">ChinaVis 2023 - The 10th China Visualization and Visual Analytics Conference</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 21/07/2023 - 24/07/2023</p>
-                <p class="mb-1"><strong>Location:</strong> Chongqing, China</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
-              <div class="list-group-item list-group-item-action">
-                <h6 class="mt-0">
-                  <strong>
-                    <a href="https://conf.scholat.com/ccscw/2022" target="_blank">ChineseCSCW 2022 - Chinese Conference on Computer Supported Cooperative Work and Social Computing</a>
-                  </strong>
-                </h6>                
-                <p class="mb-1"><strong>Date:</strong> 25/11/2022 - 27/11/2022</p>
-                <p class="mb-1"><strong>Location:</strong> Taiyuan, Shanxi, China</p>
-                <p class="mb-1"><strong>Description:</strong> Attendee</p>
-              </div>
-            
-          </div>
-        </div>        
-        
-      
+      </div>
     </div>
+    
+    <div class="publication-item mb-3" id="pub-2">
+      <div class="row">
+        <div class="col-md-2">
+          
+            <div class="publication-image">
+              <img src="/assets/img/pubs/dashboard.jpg" alt="Dashboard Vision: Using Eye-Tracking to Understand and Predict Dashboard Viewing Behaviors" class="img-fluid" style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+          
+        </div>
+        <div class="col-md-10">
+          <div class="publication-content">
+            <div class="publication-title mb-1">
+              <a href="https://manlingyang123.github.io/Dashboard-Vision/" target="_blank" style="color:; text-decoration: none; font-weight: 600;">
+                Dashboard Vision: Using Eye-Tracking to Understand and Predict Dashboard Viewing Behaviors
+              </a>
+            </div>
+            <div class="publication-authors mb-1" style="font-size: 0.9rem;">
+              
+                
+                  <span class="highlight-name" style="color:; position: relative; display: inline-block;">Manling YANG</span>, 
+                
+              
+                
+                  <span style="color:;">Yihan Hou</span>, 
+                
+              
+                
+                  <span style="color:;">Ling Li</span>, 
+                
+              
+                
+                  <span style="color:;">Remco Chang</span>, 
+                
+              
+                
+                  <span style="color:;">Wei Zeng</span>
+                
+              
+            </div>
+            <div class="publication-venue mb-2" style="font-size: 0.9rem; color:;">
+              <em>IEEE Transactions on Visualization and Computer Graphics</em>
+              
+            </div>
+            <div class="publication-links">
+              
+                <a href="/assets/pdf/manlingtvcg2025.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">PDF</a>
+              
+              
+                <a href="https://osf.io/eyvda/" target="_blank" class="btn btn-sm btn-outline-secondary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Code</a>
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="publication-item mb-3" id="pub-3">
+      <div class="row">
+        <div class="col-md-2">
+          
+            <div class="publication-image">
+              <img src="/assets/img/pubs/finflier.jpg" alt="FinFlier: Automating Graphical Overlays for Financial Visualizations with Knowledge-Grounding Large Language Model" class="img-fluid" style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+          
+        </div>
+        <div class="col-md-10">
+          <div class="publication-content">
+            <div class="publication-title mb-1">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10787087" target="_blank" style="color:; text-decoration: none; font-weight: 600;">
+                FinFlier: Automating Graphical Overlays for Financial Visualizations with Knowledge-Grounding Large Language Model
+              </a>
+            </div>
+            <div class="publication-authors mb-1" style="font-size: 0.9rem;">
+              
+                
+                  <span style="color:;">Jianing Hao</span>, 
+                
+              
+                
+                  <span class="highlight-name" style="color:; position: relative; display: inline-block;">Manling YANG</span>, 
+                
+              
+                
+                  <span style="color:;">Qing Shi</span>, 
+                
+              
+                
+                  <span style="color:;">Yuzhe Jiang</span>, 
+                
+              
+                
+                  <span style="color:;">Guang Zhang</span>, 
+                
+              
+                
+                  <span style="color:;">Wei Zeng</span>
+                
+              
+            </div>
+            <div class="publication-venue mb-2" style="font-size: 0.9rem; color:;">
+              <em>IEEE Transactions on Visualization and Computer Graphics</em>
+              
+            </div>
+            <div class="publication-links">
+              
+                <a href="/assets/pdf/jianingtvcg2025.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">PDF</a>
+              
+              
+                <a href="https://github.com/CatherineHao/FinFlier" target="_blank" class="btn btn-sm btn-outline-secondary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">Code</a>
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="publication-item mb-3" id="pub-4">
+      <div class="row">
+        <div class="col-md-2">
+          
+            <div class="publication-image">
+              <img src="/assets/img/pubs/c2ideas.jpg" alt="C2Ideas: Supporting Creative Interior Color Design Ideation with Large Language Model" class="img-fluid" style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+          
+        </div>
+        <div class="col-md-10">
+          <div class="publication-content">
+            <div class="publication-title mb-1">
+              <a href="https://dl.acm.org/doi/abs/10.1145/3613904.3642224" target="_blank" style="color:; text-decoration: none; font-weight: 600;">
+                C2Ideas: Supporting Creative Interior Color Design Ideation with Large Language Model
+              </a>
+            </div>
+            <div class="publication-authors mb-1" style="font-size: 0.9rem;">
+              
+                
+                  <span style="color:;">Yihan Hou</span>, 
+                
+              
+                
+                  <span class="highlight-name" style="color:; position: relative; display: inline-block;">Manling YANG</span>, 
+                
+              
+                
+                  <span style="color:;">Hao Cui</span>, 
+                
+              
+                
+                  <span style="color:;">Lei Wang</span>, 
+                
+              
+                
+                  <span style="color:;">Jie Xu</span>, 
+                
+              
+                
+                  <span style="color:;">Wei Zeng</span>
+                
+              
+            </div>
+            <div class="publication-venue mb-2" style="font-size: 0.9rem; color:;">
+              <em>ACM CHI Conference on Human Factors in Computing Systems (CHI2024)</em>
+              
+            </div>
+            <div class="publication-links">
+              
+                <a href="/assets/pdf/yihanchi24.pdf" target="_blank" class="btn btn-sm btn-outline-primary mr-2" style="font-size: 0.7rem; padding: 0.15rem 0.3rem;">PDF</a>
+              
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </div>
 
@@ -849,7 +598,7 @@ $('.show').show()
     <div class="dumbarton-spacer"></div>
     <div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-    <p class="navbar-text pull-left">© 2024 - In Guangzhou, China</p>
+    <p class="navbar-text pull-left">© 2025 - In Medford, U.S.</p>
     </p>
     <p class="navbar-text pull-right">
             <!-- Displays Social Media Icons based on _config.yml settings

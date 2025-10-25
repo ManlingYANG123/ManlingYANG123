@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+
+<html>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  The above 2 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+ -->
+<title>Home</title>
+<!-- Set the base URL for all relative URLs within the document -->
+<base href="https://manlingyang.org">
+
+<!--
+  Allows control over where resources are loaded from.
+  Place as early in the <head> as possible, as the tag  
+  only applies to resources that are declared after it.
+-->
+
+<!-- Short description of the document (limit to 150 characters) -->
+<!-- This content *may* be used as a part of search engine results. -->
+<meta name="description" content="a minimalistic Jekyll theme for academics">
+
+<!-- Control the behavior of search engine crawling and indexing -->
+<meta name="robots" content="index,follow"><!-- All Search Engines -->
+<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+<!-- Verify website ownership -->
+<meta name="google-site-verification" content=""><!-- Google Search Console -->
+<meta name="yandex-verification" content=""><!-- Yandex Webmasters -->
+<meta name="msvalidate.01" content=""><!-- Bing Webmaster Center -->
+<meta name="alexaVerifyID" content=""><!-- Alexa Console -->
+<meta name="p:domain_verify" content=""><!-- Pinterest Console-->
+<meta name="norton-safeweb-site-verification" content=""><!-- Norton Safe Web -->
+
+<!-- Allows control over how referrer information is passed -->
+<meta name="referrer" content="no-referrer">
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=true">
+
+<!-- Completely opt out of DNS prefetching by setting to "off" -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- Geo tags -->
+<!-- meta name="ICBM" content="latitude, longitude"-->
+<!-- meta name="geo.position" content="latitude;longitude"-->
+<!-- meta name="geo.region" content="country[-state]"><Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
+<!-- meta name="geo.placename" content="city/town"><eg. content="New York City" -->
+
+<!-- Link to an external CSS file -->
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Courgette&family=Lobster&family=Pacifico&family=Yellowtail&family=Noto+Sans+JP:wght@400;900&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+<!-- BootStrap CDN --> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://kit.fontawesome.com/32a2b2a489.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+
+<!--  GIT TALK CDN  for comment system -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+
+
+<!-- Provides information about an author or another person -->
+<link rel="me" href="mailto:myang838@connect.hkust-gz.edu.cn">
+<link rel="me" href="sms:+">
+
+<!-- Open Search -->
+<!-- link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title" -->
+
+<!-- Feeds -->
+<!-- link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS" -->
+<!-- link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3" -->
+
+<!-- For IE 10 and below -->
+<!-- Place favicon.ico in the root directory - no tag necessary -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/avatar/cropped1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/avatar/cropped1.png">
+<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#E3CFD1">
+
+<meta property="fb:app_id" content="">
+<meta property="og:url" content="https://manlingyang.org">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Home, a minimalistic Jekyll theme for academics">
+<meta property="og:image" content="/assets/img/dumbarton.png">
+<meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
+<meta property="og:description" content="a minimalistic Jekyll theme for academics">
+<meta property="og:site_name" content="Home">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ManlingYang">
+<meta name="twitter:creator" content="@ManlingYang">
+<meta name="twitter:url" content="https://manlingyang.org">
+<meta name="twitter:title" content="a minimalistic Jekyll theme for academics">
+<meta name="twitter:description" content="a minimalistic Jekyll theme for academics">
+<meta name="twitter:image" content="/assets/img/dumbarton.png">
+<meta name="twitter:image:alt" content="A minimalistic jekyll theme for academic">
+
+<!-- Used for adding in-document CSS -->
+
+
+
+<!-- JavaScript & No-JavaScript tags -->
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!--
+<script>
+    $(document).ready(function() {
+        $(".toast").toast('show');
+    });
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<noscript>
+  <!-- No JS alternative -->
+</noscript>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" href="/assets/css/custom.css">
+
+<!-- 在其他 CSS 引用后添加这行 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <body style="background-color:;">
+    
+<nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:;background-color:#E4D3DB;">
+  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#7F3B83;">Home</h4></a>
+  <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-caret-down"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+              <li class="nav-item">
+                  <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Vitae</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="/photo/" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Photos</a>
+              </li>
+        
+    </ul>
+    <ul class="navbar-nav  justify-content-end">
+      <li class="nav-item">
+        
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="dumbarton-spacer-sm"></div>
+    <div class="container">
+      
+
+<div class="photo-gallery" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+  <!-- 照片分类标签 -->
+  <div class="photo-tabs mb-4">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="digital">
+        <span>Digital Photos</span>
+      </button>
+      <button class="tab-btn" data-tab="film">
+        <span>Film Photos</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Digital Photos -->
+  <div class="scattered-photos-container" id="digital-photos">
+    
+    <div class="scattered-photo-item" data-index="1">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0079.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="2">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0085.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="3">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0368.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="4">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0406.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="5">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0783.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="6">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF0895.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="7">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF3197.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="8">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF3238.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="9">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF3438.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="10">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF5299.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="11">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF5460.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="12">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF5783.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="13">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF5794.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="14">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF5840.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="15">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6035.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="16">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6190.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="17">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6195.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="18">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6771.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="19">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6789.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="20">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6792.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="21">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6794.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="22">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6797.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="23">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6862.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="24">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF6950.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="25">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7084.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="26">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7099.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="27">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7198.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="28">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7243.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="29">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7262.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="30">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7409.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="31">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/digital/DSCF7421.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Film Photos -->
+  <div class="scattered-photos-container" id="film-photos" style="display: none;">
+    
+    <div class="scattered-photo-item" data-index="1">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000001 2.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="2">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000001.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="3">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000006.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="4">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000042.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="5">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000043.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="6">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000058.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="7">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000062.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="8">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000065.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="9">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000066.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="10">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000067.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="11">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000095750001 2.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="12">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000095750020.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="13">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000095750033.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="14">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000095750034 2.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="15">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/1c914aa6di4c42ca723294fb3bde819b.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="16">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/1d956de24t052599cc5b782011916ead.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="17">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/20d7d6e28i2c7fde46cf7582b95283eb.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="18">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/28bca32fdj1f5f3a90cb6c043ff5c056.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="19">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/3940fd88an9f7484b341e4f983c9a165.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="20">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/3f272926bncb6cd108a6dffe4efbc5a8.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="21">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/4b6227cb1dce3ffef54438b0080f7613.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="22">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/4cb950db6g265cfbcf1888944af709dc.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="23">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/6ef30954egbb999ef2745afdeb45d690.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="24">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/6f5298a3av758f1f0718e12d80765a6f.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="25">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/81b549807sac856506ad09fda6931272.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="26">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/a842c2dc8pdcdcf8a66157ea35bca561.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="27">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/af5221507ud0cc83050654a5185f46da.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="28">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/cf734cfa7g0e4342631f4efd19f0934d.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="29">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/e0a219da8n6b66811ca6bb3000563358.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="30">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/ea68f5a3bref69446e693c4699de5d09.jpg" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="31">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/f32602076o85c8917b9b580abc39b378.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="32">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/fxn 2025-06-13 162533.051.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="33">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/fxn 2025-06-15 162112.616.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="34">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/fxn 2025-07-23 163708.392 2.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- 照片弹窗 -->
+<div id="photoModal" class="photo-modal">
+  <div class="photo-modal-content">
+    <span class="photo-modal-close">&times;</span>
+    <img id="modalImage" src="" alt="">
+  </div>
+</div>
+
+
+<style>
+.photo-gallery {
+  min-height: 100vh;
+  position: relative;
+  padding: 20px;
+}
+
+.photo-tabs {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tab-buttons {
+  display: inline-flex;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.tab-btn.active {
+  background-color: #7F3B83;
+  color: white;
+  box-shadow: 0 2px 8px rgba(127, 59, 131, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.scattered-photos-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* 确保有足够高度进行居中 */
+  overflow: visible;
+  padding: 10px 20px 20px 20px; /* 减少顶部padding让照片更贴近按钮 */
+}
+
+.scattered-photo-item {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  background: transparent !important; /* 强制确保没有背景色 */
+  /* 初始位置：根据配置设置 */
+  left: 42.2125%; /* 再向左移动0.0375% */
+  
+  top: 70px; /* tab-buttons容器下方居中位置，考虑按钮高度和间距 */
+  
+  transform: translate(-50%, -50%);
+}
+
+.scattered-photo-item:hover {
+  z-index: 10;
+  transform: scale(1.05) !important;
+}
+
+.photo-wrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  background: transparent !important; /* 强制确保没有背景色 */
+}
+
+.scattered-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important; /* 填满容器，保持比例，无白边 */
+  display: block;
+  background: none !important; /* 强制移除背景 */
+  background-color: transparent !important; /* 强制透明背景 */
+  background-image: none !important; /* 强制移除背景图片 */
+}
+
+
+/* 最高优先级：强制移除所有背景和透明度 */
+.scattered-photo-item,
+.scattered-photo-item *,
+.scattered-photo-item img,
+img.scattered-photo,
+.photo-wrapper,
+.scattered-photo {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  opacity: 1 !important; /* 确保不透明 */
+}
+
+/* 强制移除所有可能的背景设置 - 最高优先级 */
+img[class*="scattered-photo"],
+.scattered-photo-item img,
+.photo-wrapper img {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  background-clip: initial !important;
+  background-origin: initial !important;
+  background-size: initial !important;
+  background-position: initial !important;
+  background-repeat: initial !important;
+}
+
+/* 移除可能的半透明效果 */
+.scattered-photo-item::before,
+.scattered-photo-item::after,
+.photo-wrapper::before,
+.photo-wrapper::after {
+  display: none !important;
+}
+
+/* 照片弹窗样式 */
+.photo-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.photo-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.photo-modal-close:hover {
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .photo-gallery {
+    padding: 10px;
+  }
+  
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .scattered-photos-container {
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .scattered-photo-item {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scattered-photo-item {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* 动态生成动画延迟 - 通过JavaScript设置 */
+
+/* 最高优先级：强制移除所有背景 - 最后执行 */
+.scattered-photo,
+.scattered-photo-item img,
+img.scattered-photo,
+img[class*="scattered-photo"] {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+  // 获取配置
+  const config = {
+    animation: {
+      baseDelay: 0.1,
+      delayIncrement: 0.1,
+      maxDelay: 1.6,
+      fadeDuration: 0.6
+    },
+    sizing: {
+      baseSizeMin: 200,
+      baseSizeMax: 300,
+      scaleFactor: 0.25
+    },
+    layout: {
+      margin: 50,
+      padding: 30,
+      rotationRange: 10
+    },
+    modal: {
+      backgroundOpacity: 0.9,
+      animationDuration: 0.3,
+      maxWidthPercent: 90,
+      maxHeightPercent: 90
+    }
+  };
+
+  // 按横纵比排列照片
+  function generateRandomPositions(containerId) {
+    const container = $('#' + containerId);
+    const items = container.find('.scattered-photo-item');
+    // 使用视口宽度而不是窗口宽度，避免container边距影响
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    
+    console.log('开始排列照片，总数:', items.length);
+    
+    // 设置动态动画延迟
+    items.each(function(index) {
+      const delay = Math.min(
+        config.animation.baseDelay + (index * config.animation.delayIncrement),
+        config.animation.maxDelay
+      );
+      $(this).css('animation-delay', delay + 's');
+    });
+    
+      // 分类照片：横屏和竖屏
+      const landscapePhotos = [];
+      const portraitPhotos = [];
+    
+    // 先加载所有图片并分类
+    let loadedCount = 0;
+    const totalPhotos = items.length;
+    
+    items.each(function(index) {
+      const item = $(this);
+      const img = item.find('img');
+      
+      // 确保图片已经加载
+      if (img[0].complete && img[0].naturalWidth > 0) {
+        processImage(item, img[0]);
+      } else {
+        img.on('load', function() {
+          processImage(item, this);
+        });
+      }
+      
+        function processImage(item, imgElement) {
+          const imgWidth = imgElement.naturalWidth;
+          const imgHeight = imgElement.naturalHeight;
+          const aspectRatio = imgWidth / imgHeight;
+          
+          // 从数据中获取orientation标记
+          const photoData = item.data('photo-data');
+          let orientation = 'landscape'; // 默认值
+          
+          if (photoData) {
+            // 优先使用orientation字段
+            if (photoData.orientation) {
+              orientation = photoData.orientation;
+            } else if (photoData.tags) {
+              // 如果没有orientation字段，从tags中获取
+              if (photoData.tags.includes('horizontal') || photoData.tags.includes('landscape')) {
+                orientation = 'landscape';
+              } else if (photoData.tags.includes('vertical') || photoData.tags.includes('portrait')) {
+                orientation = 'portrait';
+              }
+            }
+          }
+          
+          console.log(`处理照片 ${loadedCount + 1}: ${imgWidth}x${imgHeight}, 比例: ${aspectRatio.toFixed(2)}, 标记: ${orientation}`);
+          
+          // 根据标记和原始横纵比计算显示尺寸
+          let displayWidth, displayHeight;
+          
+          if (orientation === 'landscape') { // 横屏照片 - 保持原始比例
+            displayWidth = config.sizing.baseSizeMin + Math.random() * (config.sizing.baseSizeMax - config.sizing.baseSizeMin);
+            displayHeight = (imgHeight / imgWidth) * displayWidth;
+            landscapePhotos.push({ item, imgWidth, imgHeight, displayWidth, displayHeight, aspectRatio });
+            console.log(`横屏照片: ${displayWidth.toFixed(0)}x${displayHeight.toFixed(0)} (原始比例: ${aspectRatio.toFixed(2)})`);
+          } else { // 竖屏照片 - 保持原始比例
+            displayHeight = config.sizing.baseSizeMin + Math.random() * (config.sizing.baseSizeMax - config.sizing.baseSizeMin);
+            displayWidth = (imgWidth / imgHeight) * displayHeight;
+            portraitPhotos.push({ item, imgWidth, imgHeight, displayWidth, displayHeight, aspectRatio });
+            console.log(`竖屏照片: ${displayWidth.toFixed(0)}x${displayHeight.toFixed(0)} (原始比例: ${aspectRatio.toFixed(2)})`);
+          }
+          
+          loadedCount++;
+          
+          // 所有图片加载完成后开始排列
+          if (loadedCount === totalPhotos) {
+            console.log('所有照片加载完成，开始排列');
+            arrangePhotos();
+          }
+        }
+    });
+    
+    function arrangePhotos() {
+      const margin = config.layout.margin; // 使用配置的间距
+      const padding = config.layout.padding;
+      
+      console.log(`横屏照片: ${landscapePhotos.length}张`);
+      console.log(`竖屏照片: ${portraitPhotos.length}张`);
+      
+      // 散落排列横屏照片
+      landscapePhotos.forEach((photo, index) => {
+        // 修复边界计算 - 确保照片完全在可视区域内
+        const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
+        const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
+        
+        // 确保随机范围不会超出边界
+        const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
+        const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
+        
+        console.log(`照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
+        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
+        
+        // 设置位置和尺寸
+        photo.item.css({
+          'left': randomX + 'px',
+          'top': randomY + 'px',
+          'width': photo.displayWidth + 'px',
+          'height': photo.displayHeight + 'px',
+          'background': 'none' // 强制移除背景
+        });
+        
+        // 强制移除背景色
+        photo.item.css({
+          'background': 'none',
+          'background-color': 'transparent',
+          'background-image': 'none'
+        });
+        
+        // 添加轻微随机旋转
+        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
+        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
+      });
+      
+      // 散落排列竖屏照片
+      portraitPhotos.forEach((photo, index) => {
+        // 修复边界计算 - 确保照片完全在可视区域内
+        const safeMaxX = Math.max(0, windowWidth - photo.displayWidth - padding);
+        const safeMaxY = Math.max(0, windowHeight - photo.displayHeight - padding);
+        
+        // 确保随机范围不会超出边界
+        const randomX = Math.min(padding + Math.random() * safeMaxX, safeMaxX);
+        const randomY = Math.min(padding + Math.random() * safeMaxY, safeMaxY);
+        
+        console.log(`竖屏照片 ${index + 1}: 位置 (${randomX.toFixed(0)}, ${randomY.toFixed(0)}), 尺寸 ${photo.displayWidth}x${photo.displayHeight}`);
+        console.log(`安全范围: X[${padding}, ${safeMaxX}], Y[${padding}, ${safeMaxY}], 窗口: ${windowWidth}x${windowHeight}`);
+        
+        // 设置位置和尺寸
+        photo.item.css({
+          'left': randomX + 'px',
+          'top': randomY + 'px',
+          'width': photo.displayWidth + 'px',
+          'height': photo.displayHeight + 'px',
+          'background': 'none' // 强制移除背景
+        });
+        
+        // 强制移除背景色
+        photo.item.css({
+          'background': 'none',
+          'background-color': 'transparent',
+          'background-image': 'none'
+        });
+        
+        // 添加轻微随机旋转
+        const rotation = (Math.random() - 0.5) * config.layout.rotationRange; // 使用配置的旋转范围
+        photo.item.find('.photo-wrapper').css('transform', `rotate(${rotation}deg)`);
+      });
+      
+      // 绑定点击事件到所有照片
+      $('.scattered-photo-item').off('click').on('click', function() {
+        console.log('照片被点击了！');
+        const imgSrc = $(this).find('img').attr('src');
+        $('#modalImage').attr('src', imgSrc);
+        $('#photoModal').show();
+      });
+    }
+  }
+  
+  // 关闭弹窗功能
+  $('.photo-modal-close').click(function() {
+    $('#photoModal').hide();
+  });
+  
+  // 点击弹窗背景关闭
+  $('#photoModal').click(function(e) {
+    if (e.target === this) {
+      $('#photoModal').hide();
+    }
+  });
+  
+  // ESC键关闭弹窗
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) { // ESC键
+      $('#photoModal').hide();
+    }
+  });
+  
+  // 标签页切换功能
+  $('.tab-btn').click(function() {
+    var tab = $(this).data('tab');
+    
+    // 更新按钮状态
+    $('.tab-btn').removeClass('active');
+    $(this).addClass('active');
+    
+    // 切换内容
+    if (tab === 'digital') {
+      $('#digital-photos').show();
+      $('#film-photos').hide();
+      setTimeout(() => generateRandomPositions('digital-photos'), 100);
+    } else if (tab === 'film') {
+      $('#digital-photos').hide();
+      $('#film-photos').show();
+      setTimeout(() => generateRandomPositions('film-photos'), 100);
+    }
+  });
+  
+  
+  // 点击页面其他地方关闭放大
+  $(document).click(function(e) {
+    if (!$(e.target).closest('.scattered-photo-item').length) {
+      $('.scattered-photo-item').removeClass('expanded');
+    }
+  });
+  
+  // 初始化数字照片位置
+  setTimeout(() => generateRandomPositions('digital-photos'), 500);
+  
+  // 窗口大小改变时重新排列
+  $(window).resize(function() {
+    const activeTab = $('.tab-btn.active').data('tab');
+    if (activeTab === 'digital') {
+      generateRandomPositions('digital-photos');
+    } else if (activeTab === 'film') {
+      generateRandomPositions('film-photos');
+    }
+  });
+});
+</script>
+    </div>
+    <div class="dumbarton-spacer"></div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text pull-left">© 2025 - In Medford, U.S.</p>
+    </p>
+    <p class="navbar-text pull-right">
+            <!-- Displays Social Media Icons based on _config.yml settings
+
+<span style="color: Black;">
+     
+        <a class="social-link" href="https://twitter.com/ManlingYang">
+        <span style="color: #7F3B83 ;"> 
+            <i class="fab fa-twitter-square fa-lg"></i></a>
+        </span>
+    
+    
+        <a href="https://github.com/ManlingYang123">
+        <span style="color: #7F3B83 ;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
+    
+    <i> &nbsp;&nbsp; </i>
+</span> -->
+
+    </p>
+  </div>
+</div> 
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+  </body>
+</html>

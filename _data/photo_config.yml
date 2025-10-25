@@ -1,11 +1,14 @@
 # 照片展示配置
 photo_settings:
-  # 动画设置
+  # 动画设置 - 中心聚合后展开模式
   animation:
-    base_delay: 0.1  # 基础延迟时间（秒）
-    delay_increment: 0.1  # 每张照片的延迟增量（秒）
-    max_delay: 1.6  # 最大延迟时间（秒）
-    fade_duration: 0.6  # 淡入动画持续时间（秒）
+    base_delay: 0.05  # 基础延迟时间（秒）
+    delay_increment: 0.05  # 每张照片的延迟增量（秒）
+    max_delay: 0.5  # 最大延迟时间（秒）
+    fade_duration: 0.3  # 淡入动画持续时间（秒）
+    fast_mode: false  # 关闭快速模式，启用聚合动画
+    center_duration: 0.5  # 在中心停留时间（秒）
+    scatter_delay: 0.5  # 从中心散开的延迟时间（秒）
   
   # 照片尺寸设置
   sizing:
@@ -18,7 +21,9 @@ photo_settings:
     margin: 50  # 照片间距
     padding: 30  # 容器内边距
     rotation_range: 10  # 旋转角度范围（度）
-    initial_position: "below_buttons"  # 初始聚合位置: "center" 或 "below_buttons"
+    initial_position: "center"  # 初始位置: "center", "below_buttons" 或 "scattered"
+    center_offset_x: -70  # 中心位置X轴偏移（像素，负值向左）
+    center_offset_y: -100  # 中心位置Y轴偏移（像素，负值向上）
   
   # 弹窗设置
   modal:

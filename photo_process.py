@@ -7,7 +7,7 @@ import glob
 
 def compress_image(input_path, output_path, quality=85, max_width=1920, max_height=1080):
     """
-    压缩图片，保持比例和质量
+    压缩图片，保持比例和质量，同时保留原始方向
     Args:
         input_path: 输入图片路径
         output_path: 输出图片路径
@@ -18,7 +18,20 @@ def compress_image(input_path, output_path, quality=85, max_width=1920, max_heig
     try:
         # 使用PIL打开图片
         with Image.open(input_path) as img:
-            # 获取原始尺寸
+            # 获取EXIF信息
+            exif = img.getexif()
+            
+            # 根据EXIF方向信息旋转图片
+            if exif is not None:
+                orientation = exif.get(274)  # EXIF方向标签
+                if orientation == 3:
+                    img = img.rotate(180, expand=True)
+                elif orientation == 6:
+                    img = img.rotate(270, expand=True)
+                elif orientation == 8:
+                    img = img.rotate(90, expand=True)
+            
+            # 获取旋转后的尺寸
             original_width, original_height = img.size
             
             # 计算缩放比例
@@ -41,8 +54,8 @@ def compress_image(input_path, output_path, quality=85, max_width=1920, max_heig
             elif img.mode != 'RGB':
                 img = img.convert('RGB')
             
-            # 保存为JPEG格式
-            img.save(output_path, 'JPEG', quality=quality, optimize=True)
+            # 保存为JPEG格式，保留EXIF信息
+            img.save(output_path, 'JPEG', quality=quality, optimize=True, exif=exif)
             
             return True
     except Exception as e:

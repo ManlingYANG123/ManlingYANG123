@@ -17,26 +17,30 @@
 
 .image-hover-container {
     position: relative;
+    display: inline-block;
     width: 100%;
-    height: auto;
+    max-width: 200px;
 }
 
 .image-hover-container img {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     transition: opacity 0.3s ease-in-out;
 }
 
-.main-image {
+.image-hover-container .main-image {
     opacity: 1;
-    position: relative !important;
+    position: relative;
+    z-index: 1;
 }
 
-.hover-image {
+.image-hover-container .hover-image {
     opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .image-hover-container:hover .main-image {

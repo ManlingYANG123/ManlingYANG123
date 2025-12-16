@@ -8,7 +8,11 @@
     <ul class="navbar-nav mr-auto">
         {% for item in site.data.nav.links %}
               <li class="nav-item">
-                  <a href="{{ item.url }}" class="nav-link" style="font-family:{{ theme.link-font }};color:{{ theme.nav-text}};">{{ item.title }}</a>
+                  {% if item.url contains 'http://' or item.url contains 'https://' %}
+                    <a href="javascript:void(0)" class="nav-link external-link" data-external-url="{{ item.url }}" style="font-family:{{ theme.link-font }};color:{{ theme.nav-text}};">{{ item.title }}</a>
+                  {% else %}
+                    <a href="{{ item.url }}" class="nav-link" style="font-family:{{ theme.link-font }};color:{{ theme.nav-text}};">{{ item.title }}</a>
+                  {% endif %}
               </li>
         {% endfor %}
     </ul>
@@ -19,3 +23,38 @@
     </ul>
   </div>
 </nav>
+
+<script>
+// 处理外部链接，避免地址栏闪烁
+(function() {
+  // 使用立即执行函数，确保代码尽早执行
+  function handleExternalLinks() {
+    const externalLinks = document.querySelectorAll('.external-link');
+    externalLinks.forEach(function(link) {
+      // 使用mousedown事件，在click之前拦截
+      link.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
+      
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        const url = this.getAttribute('data-external-url');
+        if (url) {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+        return false;
+      }, true);
+    });
+  }
+  
+  // 如果DOM已加载，立即执行；否则等待DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleExternalLinks);
+  } else {
+    handleExternalLinks();
+  }
+})();
+</script>

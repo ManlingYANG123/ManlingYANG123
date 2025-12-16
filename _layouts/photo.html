@@ -347,6 +347,12 @@ $(document).ready(function() {
     
     console.log('开始排列照片，总数:', items.length);
     
+    // 先重置所有照片的状态，确保它们都是隐藏的，避免闪烁
+    items.css({
+      'opacity': '0',
+      'visibility': 'hidden'
+    });
+    
     // 设置动态动画延迟 - 中心聚合模式
     if (config.animation.fastMode) {
       // 快速模式：所有照片几乎同时出现
@@ -560,12 +566,34 @@ $(document).ready(function() {
     
     // 切换内容
     if (tab === 'digital') {
-      $('#digital-photos').show();
+      // 先隐藏film photo并重置其状态
       $('#film-photos').hide();
+      $('#film-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 显示digital photo
+      $('#digital-photos').show();
       setTimeout(() => generateRandomPositions('digital-photos'), 100);
     } else if (tab === 'film') {
+      // 先隐藏digital photo并重置其状态
       $('#digital-photos').hide();
+      $('#digital-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 先重置film photo的状态，确保所有照片都是隐藏的
+      $('#film-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 显示film photo容器
       $('#film-photos').show();
+      
+      // 延迟执行动画，确保容器已显示
       setTimeout(() => generateRandomPositions('film-photos'), 100);
     }
   });

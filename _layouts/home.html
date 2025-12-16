@@ -32,17 +32,14 @@ layout: default
 <div class="container-fluid mb-4">
   <div class="row">
     <div class="col-md-3">
-      {% if site.animate %}
-      <img src="{{ site.profile_image }}"
-           class="img-fluid rounded shadow"
-           alt="Profile Image"
-           style="max-width: 200px;">
-      {% else %}
-      <img src="{{ site.profile_image }}" 
-           class="img-fluid rounded shadow" 
-           alt="Profile Image"
-           style="max-width: 200px;">
-      {% endif %}
+      <div class="image-hover-container">
+        <img src="{{ site.profile_image }}"
+             class="img-fluid rounded shadow main-image"
+             alt="Profile Image">
+        <img src="{{ site.profile_image_hover }}"
+             class="img-fluid rounded shadow hover-image"
+             alt="Profile Image Hover">
+      </div>
     </div>
     <div class="col-md-9">
       <div class="mt-3">

@@ -1,7 +1,5 @@
 # 读取/Users/manlingy/Desktop/Person/homepage/ManlingYANG123/assets/img/photo里面所有的图片文件，并且图片文件大小但保留比例和像素之类的，保证加载速度和质量
 import os
-import cv2
-import numpy as np
 from PIL import Image
 import glob
 
@@ -66,7 +64,7 @@ def process_photos():
     """
     处理photo文件夹中的所有图片
     """
-    photo_dir = '/Users/manlingy/Desktop/Person/homepage/ManlingYANG123/assets/img/photo'
+    photo_dir = '/Users/manlingy/Desktop/Person/homepage/ManlingYANG123/assets/img/photo/unprocess'
     
     # 支持的图片格式
     image_extensions = ['*.jpg', '*.jpeg', '*.JPG', '*.JPEG', '*.png', '*.PNG', '*.bmp', '*.BMP']

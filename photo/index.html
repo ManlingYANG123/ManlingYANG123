@@ -10,7 +10,7 @@
  -->
 <title>Home</title>
 <!-- Set the base URL for all relative URLs within the document -->
-<base href="https://manlingyang.org">
+<base href="http://localhost:4000">
 
 <!--
   Allows control over where resources are loaded from.
@@ -84,7 +84,7 @@
 <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#E3CFD1">
 
 <meta property="fb:app_id" content="">
-<meta property="og:url" content="https://manlingyang.org">
+<meta property="og:url" content="http://localhost:4000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Home, a minimalistic Jekyll theme for academics">
 <meta property="og:image" content="/assets/img/dumbarton.png">
@@ -97,7 +97,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ManlingYang">
 <meta name="twitter:creator" content="@ManlingYang">
-<meta name="twitter:url" content="https://manlingyang.org">
+<meta name="twitter:url" content="http://localhost:4000">
 <meta name="twitter:title" content="a minimalistic Jekyll theme for academics">
 <meta name="twitter:description" content="a minimalistic Jekyll theme for academics">
 <meta name="twitter:image" content="/assets/img/dumbarton.png">
@@ -158,11 +158,15 @@
     <ul class="navbar-nav mr-auto">
         
               <li class="nav-item">
-                  <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Vitae</a>
+                  
+                    <a href="javascript:void(0)" class="nav-link external-link" data-external-url="https://drive.google.com/file/d/1ZIV2EfjLEKY4GhDg9gSmVVM7CyUpV9RJ/view?usp=drive_link" style="font-family:Poppins;color:#7F3B83;">Vitae</a>
+                  
               </li>
         
               <li class="nav-item">
-                  <a href="/photo/" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Photos</a>
+                  
+                    <a href="/photo/" class="nav-link" style="font-family:Poppins;color:#7F3B83;">Photos</a>
+                  
               </li>
         
     </ul>
@@ -173,6 +177,41 @@
     </ul>
   </div>
 </nav>
+
+<script>
+// 处理外部链接，避免地址栏闪烁
+(function() {
+  // 使用立即执行函数，确保代码尽早执行
+  function handleExternalLinks() {
+    const externalLinks = document.querySelectorAll('.external-link');
+    externalLinks.forEach(function(link) {
+      // 使用mousedown事件，在click之前拦截
+      link.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
+      
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        const url = this.getAttribute('data-external-url');
+        if (url) {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+        return false;
+      }, true);
+    });
+  }
+  
+  // 如果DOM已加载，立即执行；否则等待DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleExternalLinks);
+  } else {
+    handleExternalLinks();
+  }
+})();
+</script>
 
     <div class="dumbarton-spacer-sm"></div>
     <div class="container">
@@ -775,6 +814,60 @@
       </div>
     </div>
     
+    <div class="scattered-photo-item" data-index="35">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000014.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="36">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000015.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="37">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000021.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="38">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000024.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="39">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000034.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
+    <div class="scattered-photo-item" data-index="40">
+      <div class="photo-wrapper">
+        <img src="/assets/img/photo/film/000035.JPG" 
+             class="scattered-photo" 
+             loading="lazy"
+             style="background: none !important; background-color: transparent !important;">
+      </div>
+    </div>
+    
   </div>
 </div>
 
@@ -1073,6 +1166,12 @@ $(document).ready(function() {
     
     console.log('开始排列照片，总数:', items.length);
     
+    // 先重置所有照片的状态，确保它们都是隐藏的，避免闪烁
+    items.css({
+      'opacity': '0',
+      'visibility': 'hidden'
+    });
+    
     // 设置动态动画延迟 - 中心聚合模式
     if (config.animation.fastMode) {
       // 快速模式：所有照片几乎同时出现
@@ -1286,12 +1385,34 @@ $(document).ready(function() {
     
     // 切换内容
     if (tab === 'digital') {
-      $('#digital-photos').show();
+      // 先隐藏film photo并重置其状态
       $('#film-photos').hide();
+      $('#film-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 显示digital photo
+      $('#digital-photos').show();
       setTimeout(() => generateRandomPositions('digital-photos'), 100);
     } else if (tab === 'film') {
+      // 先隐藏digital photo并重置其状态
       $('#digital-photos').hide();
+      $('#digital-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 先重置film photo的状态，确保所有照片都是隐藏的
+      $('#film-photos .scattered-photo-item').css({
+        'opacity': '0',
+        'visibility': 'hidden'
+      });
+      
+      // 显示film photo容器
       $('#film-photos').show();
+      
+      // 延迟执行动画，确保容器已显示
       setTimeout(() => generateRandomPositions('film-photos'), 100);
     }
   });

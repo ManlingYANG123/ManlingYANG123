@@ -398,8 +398,8 @@
       <img src="../assets/img/photo/digital/DSCF7880.jpg" alt="Digital photo 42" loading="lazy">
     </button>
 
-  </div>
-
+    </div>
+    
   <div class="photo-masonry" id="film-photos" role="tabpanel" hidden>
     <button type="button" class="photo-tile" data-src="../assets/img/photo/film/000001_2.jpg" aria-label="Open Film photo 1">
       <img src="../assets/img/photo/film/000001_2.jpg" alt="Film photo 1" loading="lazy">
@@ -584,14 +584,14 @@
     <button type="button" class="photo-tile" data-src="../assets/img/photo/film/000083710036_1.JPG" aria-label="Open Film photo 46">
       <img src="../assets/img/photo/film/000083710036_1.JPG" alt="Film photo 46" loading="lazy">
     </button>
-  </div>
-
+    </div>
+    
   <p class="photo-next-stop">Next Stop: McCall :)</p>
 </div>
 
 <div id="photoModal" class="photo-modal" hidden>
   <button type="button" class="photo-modal-close" aria-label="Close photo">&times;</button>
-  <img id="modalImage" src="" alt="">
+    <img id="modalImage" src="" alt="">
 </div>
 
 <style>
@@ -843,7 +843,7 @@ body, html {
       if (!tiles.length) return;
       shuffle(tiles);
       order[key] = tiles.slice();
-    } else {
+      } else {
       tiles = order[key];
     }
     root.style.height = '';

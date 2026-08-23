@@ -1,93 +1,37 @@
-# 照片展示系统使用说明
+# Photo update guide
 
-## 概述
-这个照片展示系统现在支持通过配置文件轻松更新，无需修改代码即可调整各种参数。
+The gallery is listed by hand in `photo/index.html`. New originals go into `unprocess`, then `photo_process.py` compresses them into the live folders.
 
-## 配置文件位置
-`_data/photo_config.yml`
+## Add new photos
 
-## 如何添加新照片
+1. Drop originals here (do not put them straight into the live folders):
+   - Digital: `assets/img/photo/unprocess/digital/`
+   - Film: `assets/img/photo/unprocess/film/`
+2. From `webpage/ManlingYANG123`, run:
 
-### 1. 添加数字照片
-在 `_data/photo.yml` 中添加新的照片条目：
-```yaml
-- image: "/assets/img/photo/digital/新照片.jpg"
+   ```bash
+   python3 photo_process.py
+   ```
+
+   The script:
+   - keeps the originals in `unprocess/{digital,film}/backup/`
+   - writes compressed JPEGs (max 1920×1080, quality 85) to `assets/img/photo/digital/` or `film/`
+   - replaces spaces in filenames with `_`
+   - removes the files from `unprocess` after a successful compress
+3. Add one tile per new file in `photo/index.html`.
+   - Digital: inside `#digital-photos`
+   - Film: inside `#film-photos`
+
+```html
+<button type="button" class="photo-tile" data-src="../assets/img/photo/digital/YOUR_FILE.jpg" aria-label="Open Digital photo">
+  <img src="../assets/img/photo/digital/YOUR_FILE.jpg" alt="Digital photo" loading="lazy">
+</button>
 ```
 
-### 2. 添加胶片照片
-在 `_data/film.yml` 中添加新的照片条目：
-```yaml
-- image: "/assets/img/photo/film/新照片.jpg"
-```
+4. Commit the live compressed files and the HTML change. Do not commit `unprocess/**/backup` (full-size originals).
 
-### 3. 照片文件放置
-- 数字照片：放在 `assets/img/photo/digital/` 目录
-- 胶片照片：放在 `assets/img/photo/film/` 目录
+## Notes
 
-## 配置参数说明
-
-### 动画设置
-```yaml
-animation:
-  base_delay: 0.1        # 第一张照片的延迟时间（秒）
-  delay_increment: 0.1   # 每张照片的延迟增量（秒）
-  max_delay: 1.6         # 最大延迟时间（秒）
-  fade_duration: 0.6     # 淡入动画持续时间（秒）
-```
-
-### 照片尺寸设置
-```yaml
-sizing:
-  base_size_min: 200     # 照片最小尺寸（像素）
-  base_size_max: 300     # 照片最大尺寸（像素）
-  scale_factor: 0.25     # 缩放因子（原始尺寸的倍数）
-```
-
-### 布局设置
-```yaml
-layout:
-  margin: 50             # 照片间距（像素）
-  padding: 30           # 容器内边距（像素）
-  rotation_range: 10     # 旋转角度范围（度）
-```
-
-### 弹窗设置
-```yaml
-modal:
-  background_opacity: 0.9    # 背景透明度（0-1）
-  animation_duration: 0.3    # 弹窗动画持续时间（秒）
-  max_width_percent: 90      # 弹窗最大宽度百分比
-  max_height_percent: 90     # 弹窗最大高度百分比
-```
-
-## 常见调整场景
-
-### 1. 添加更多照片后调整动画延迟
-如果添加了很多照片，可以调整：
-- `delay_increment`: 减小增量让动画更快
-- `max_delay`: 增加最大延迟时间
-
-### 2. 调整照片大小
-- `base_size_min` 和 `base_size_max`: 调整照片显示尺寸范围
-- `scale_factor`: 调整整体缩放比例
-
-### 3. 调整布局密度
-- `margin`: 调整照片间距
-- `padding`: 调整容器边距
-
-### 4. 调整弹窗效果
-- `background_opacity`: 调整背景透明度
-- `max_width_percent` 和 `max_height_percent`: 调整弹窗大小
-
-## 注意事项
-1. 修改配置文件后需要重新启动Jekyll服务器
-2. 照片文件名建议使用英文和数字，避免特殊字符
-3. 建议照片尺寸不要过大，影响加载速度
-4. 动画延迟会自动根据照片数量计算，无需手动设置每张照片的延迟
-
-## 示例：添加10张新照片
-1. 将照片文件放入对应目录
-2. 在 `photo.yml` 或 `film.yml` 中添加10个条目
-3. 如果需要，调整 `max_delay` 为更大的值（如2.0）
-4. 重启Jekyll服务器查看效果
-
+- Prefer filenames with letters, numbers, `_`, and `.` only.
+- `_data/photo.yml` and `_data/film.yml` are no longer used.
+- After adding many photos, the scattered layout still works; no extra delay config is required.

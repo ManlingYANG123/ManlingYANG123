@@ -169,9 +169,44 @@
 
 /* 新布局样式 */
 .news-item {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 0.4em;
+  align-items: baseline;
   border-left: 3px solid #7F3B83;
   padding-left: 15px;
   margin-bottom: 10px;
+}
+
+.news-item > .news-date-monospace {
+  white-space: nowrap;
+}
+
+.news-item > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.news-item .news-paper-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.news-item .news-paper-link:hover,
+.news-item .news-paper-link:focus-visible {
+  color: #5a2a5f;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'%3E%3Cpath fill='%23ead8ed' d='M0 28 Q22 26 44 19 Q60 2 87 9 Q130 0 172 10 Q206 24 239 16 Q282 3 312 17 Q345 22 370 16 L400 24 L400 38 L0 38Z'/%3E%3C/svg%3E");
+}
+
+.news-item .news-paper-link:focus-visible {
+  outline: 2px solid #7F3B83;
+  outline-offset: 3px;
 }
 
 /* News滚动条样式 */
@@ -210,11 +245,8 @@
   transition: all 0.3s ease;
 }
 
-/* 使用ID选择器确保hover效果独立 - 最高优先级 */
-#pub-1:hover,
-#pub-2:hover,
-#pub-3:hover,
-#pub-4:hover {
+/* 所有论文条目使用一致的独立 hover 效果 */
+.publications-list .publication-item:hover {
   background-color: #f8f9fa !important;
   padding-left: 10px !important;
   border-left: 3px solid #7F3B83 !important;
@@ -274,6 +306,13 @@
 }
 
 .publication-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 4px;
   border: 1px solid #dee2e6;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -297,23 +336,14 @@
   padding-left: 15px;
 }
 
-/* 简洁姓名强调 - 参考liangweioio.github.io */
+/* 作者姓名始终显示手绘荧光笔强调 */
 .highlight-name {
   position: relative;
   display: inline-block;
   font-weight: 700;
-}
-
-.highlight-name::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #7F3B83;
-  opacity: 0.6;
-  transform: skew(-2deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'%3E%3Cpath fill='%23ead8ed' d='M0 28 Q22 26 44 19 Q60 2 87 9 Q130 0 172 10 Q206 24 239 16 Q282 3 312 17 Q345 22 370 16 L400 24 L400 38 L0 38Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /* Bibliography 样式 */
